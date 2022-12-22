@@ -16,8 +16,8 @@ const auditRouter = require('./audits')
 const { verifyToken } = require('../middleware/verifyToken')
 
 router.post('/login', authController.handleLogin)
-router.get('/logout', logoutController.handleLogout)
-router.get('/refresh', refreshTokenController.handleRefreshToken)
+router.post('/logout', logoutController.handleLogout)
+router.post('/refresh', refreshTokenController.handleRefreshToken)
 
 router.use('/user', userRouter)
 

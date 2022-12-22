@@ -11,11 +11,6 @@ const config = require('./config/config.js')[env]
 
 if (config.database.url) {
 	Mongoose.connect(config.database.url, config.database.options)
-} else if (config.database.config.dbName) {
-	Mongoose.connect(
-		`${config.database.protocol}://${config.database.username}:${config.database.password}@${config.database.host}:${config.database.port}`,
-		config.database.options
-	)
 } else {
 	Mongoose.connect(
 		`${config.database.protocol}://${config.database.username}:${config.database.password}@${config.database.host}:${config.database.port}/${config.database.name}`,
@@ -27,9 +22,7 @@ var corsOptions = {
 	origin: process.env.NODE_FRONT_END,
 	credentials: true,
 }
-
 var indexRouter = require('./routes/index')
-var usersRouter = require('./routes/users')
 
 var app = express()
 
@@ -41,6 +34,5 @@ app.use(cookieParser())
 app.use(express.static(path.join(__dirname, 'public')))
 
 app.use('/', indexRouter)
-app.use('/users', usersRouter)
 
 module.exports = app

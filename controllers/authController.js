@@ -7,18 +7,15 @@ const handleLogin = async (req, res) => {
 		const user = await Users.findOne({
 			username: req.body.username,
 		})
+		if (!user.status) return res.status(400).json({ msg: 'Not Active' })
 		const match = await bcrypt.compare(req.body.password, user.password)
 		if (!match) return res.status(400).json({ msg: 'Wrong Password' })
 		const userId = user._id
 		const role = user.role
 
-		const accessToken = jwt.sign(
-			{ userId },
-			process.env.ACCESS_TOKEN_SECRET,
-			{
-				expiresIn: '20s',
-			}
-		)
+		const accessToken = jwt.sign({ userId }, process.env.ACCESS_TOKEN_SECRET, {
+			expiresIn: '20s',
+		})
 		const refreshToken = jwt.sign(
 			{ userId },
 			process.env.REFRESH_TOKEN_SECRET,
@@ -27,11 +24,11 @@ const handleLogin = async (req, res) => {
 			}
 		)
 		await Users.findByIdAndUpdate(userId, { refresh_token: refreshToken })
-		res.cookie('refreshToken', refreshToken, {
-			httpOnly: true,
-			maxAge: 24 * 60 * 60 * 1000,
-		})
-		res.json({ accessToken, role })
+		// res.cookie('refreshToken', refreshToken, {
+		// 	httpOnly: true,
+		// 	maxAge: 24 * 60 * 60 * 1000,
+		// })
+		res.json({ accessToken, refreshToken, role })
 	} catch (error) {
 		res.status(400).json({ msg: 'Username not found' })
 	}

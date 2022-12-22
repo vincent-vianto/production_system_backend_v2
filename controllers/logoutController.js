@@ -1,7 +1,7 @@
 const Users = require('../models/User')
 
 const handleLogout = async (req, res) => {
-	const refreshToken = req.cookies.refreshToken
+	const refreshToken = req.body.refreshToken
 	if (!refreshToken) return res.sendStatus(204)
 	const user = await Users.findOne({
 		where: {
@@ -12,7 +12,7 @@ const handleLogout = async (req, res) => {
 	const userId = user._id
 	await Users.findByIdAndUpdate(userId, { refresh_token: null })
 
-	res.clearCookie('refreshToken')
+	// res.clearCookie('refreshToken')
 	return res.sendStatus(200)
 }
 

@@ -20,12 +20,7 @@ module.exports = {
 	},
 	production: {
 		database: {
-			protocol: 'mongodb',
-			username: process.env.DB_PROD_USERNAME,
-			password: process.env.DB_PROD_PASS,
-			name: process.env.DB_PROD_DATABSE,
-			host: process.env.DB_PROD_HOST,
-			port: process.env.PORT,
+			url: process.env.DB_PROD,
 			options: {
 				useNewUrlParser: true,
 				useUnifiedTopology: true,
