@@ -1,0 +1,229 @@
+{
+    "name": "QA In Process Line Audit Check List [SMT Area]",
+    "description": "Fill in following question with below score n/ 3  -  System/Control in place and acceptable n/ 2  -  System/Control in place but need minor improvement n/ 1  -  System/Control in place but NOT meeting requirement n/ 0  -  System/Control NOT in place",
+    "form_number": "FM-ATI-QC-038 rev 2",
+    "template": [
+        {
+            "category": "General",
+            "items": [
+                {
+                    "item": "Auditor",
+                    "field": "text"
+                },
+                {
+                    "item": "Auditee",
+                    "field": "text"
+                },
+                {
+                    "item": "Score",
+                    "field": "number"
+                }
+            ]
+        },
+        {
+            "category": "Production Line",
+            "items": [
+                {
+                    "item": "Is the solder paste or epoxy not more than 96 hours usage in line ?",
+                    "field": "radio",
+                    "min": 0,
+                    "max": 3,
+                    "comment": true
+                },
+                {
+                    "item": "Are components in feeders prepared base on loading list ?",
+                    "field": "radio",
+                    "min": 0,
+                    "max": 3,
+                    "comment": true
+                },
+                {
+                    "item": "Is the 'Top up component record' recorded correctly and the range value within specification base from BOM & Agile ?",
+                    "field": "radio",
+                    "min": 0,
+                    "max": 3,
+                    "comment": true
+                },
+                {
+                    "item": "Is there a temperature profile taken then printed for every Friday and every  PT / FAS model?",
+                    "field": "radio",
+                    "min": 0,
+                    "max": 3,
+                    "comment": true
+                },
+                {
+                    "item": "Is the temperature profile taken within or according to Matrix profile?",
+                    "field": "radio",
+                    "min": 0,
+                    "max": 3,
+                    "comment": true
+                },
+                {
+                    "item": "Is there a WI displayed for each operator to follow and according model running and with latest rev ?",
+                    "field": "radio",
+                    "min": 0,
+                    "max": 3,
+                    "comment": true
+                },
+                {
+                    "item": "Does operator understand and works task according to WI ?",
+                    "field": "radio",
+                    "min": 0,
+                    "max": 3,
+                    "comment": true
+                },
+                {
+                    "item": "Is there a work instruction that states the solder iron temperature and recorded base on product requirement?",
+                    "field": "radio",
+                    "min": 0,
+                    "max": 3,
+                    "comment": true
+                },
+                {
+                    "item": "Is there solder wire usage according to spec ?",
+                    "field": "radio",
+                    "min": 0,
+                    "max": 3,
+                    "comment": true
+                },
+                {
+                    "item": "Is there a proper segregation of good and reject units with proper identification labels?",
+                    "field": "radio",
+                    "min": 0,
+                    "max": 3,
+                    "comment": true
+                }
+            ]
+        },
+        {
+            "category": "Non Conformance Handling",
+            "items": [
+                {
+                    "item": "Is there a proper segregation of good and reject units with proper identification labels?",
+                    "field": "radio",
+                    "min": 0,
+                    "max": 3,
+                    "comment": true
+                },
+                {
+                    "item": "Is there proper identification of reject / on hold units & an available area for its staging?",
+                    "field": "radio",
+                    "min": 0,
+                    "max": 3,
+                    "comment": true
+                }
+            ]
+        },
+        {
+            "category": "ESD",
+            "items": [
+                {
+                    "item": "Have all grounding been checked and recorded ?",
+                    "field": "radio",
+                    "min": 0,
+                    "max": 3,
+                    "comment": true
+                },
+                {
+                    "item": "Is the daily wristrap checking conducted and recorded ?",
+                    "field": "radio",
+                    "min": 0,
+                    "max": 3,
+                    "comment": true
+                },
+                {
+                    "item": "Does the operator use wristrap correctly ?",
+                    "field": "radio",
+                    "min": 0,
+                    "max": 3,
+                    "comment": true
+                },
+                {
+                    "item": "Is the PCBA handled according to ESD procedure ?",
+                    "field": "radio",
+                    "min": 0,
+                    "max": 3,
+                    "comment": true
+                },
+                {
+                    "item": "Are there non-ESD safe materials near the PCBA?",
+                    "field": "radio",
+                    "min": 0,
+                    "max": 3,
+                    "comment": true
+                }
+            ]
+        },
+        {
+            "category": "MSD ( Moisturize Sensitive Device )",
+            "items": [
+                {
+                    "item": "Are MSD part storage & handling according to MSD procedure?",
+                    "field": "radio",
+                    "min": 0,
+                    "max": 3,
+                    "comment": true
+                },
+                {
+                    "item": "Is temperature and humidity controlled ?",
+                    "field": "radio",
+                    "min": 0,
+                    "max": 3,
+                    "comment": true
+                }
+            ]
+        },
+        {
+            "category": "5S",
+            "items": [
+                {
+                    "item": "Are all the sets properly identified & at the correct area ?",
+                    "field": "radio",
+                    "min": 0,
+                    "max": 3,
+                    "comment": true
+                },
+                {
+                    "item": "Is there proper set arrangement to prevent secondary problem ?",
+                    "field": "radio",
+                    "min": 0,
+                    "max": 3,
+                    "comment": true
+                },
+                {
+                    "item": "Is there unnecessary materials on the line ?",
+                    "field": "radio",
+                    "min": 0,
+                    "max": 3,
+                    "comment": true
+                },
+                {
+                    "item": "Is production area cleanliness being controlled well? ",
+                    "field": "radio",
+                    "min": 0,
+                    "max": 3,
+                    "comment": true
+                },
+                {
+                    "item": "Does the working area have sufficient light illumination?",
+                    "field": "radio",
+                    "min": 0,
+                    "max": 3,
+                    "comment": true
+                }
+            ]
+        },
+        {
+            "category": "Important Thing",
+            "items": [
+                {
+                    "item": "Is the loading list was updated as per ECO?",
+                    "field": "radio",
+                    "min": 0,
+                    "max": 3,
+                    "comment": true
+                }
+            ]
+        }
+    ]
+}
