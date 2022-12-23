@@ -22,6 +22,6 @@ router.post('/refresh', refreshTokenController.handleRefreshToken)
 router.use('/user', userRouter)
 
 router.use('/form', verifyToken, formTemplateRouter)
-router.use('/audit', verifyToken, auditRouter)
+router.use('/audit',verifyToken, auditRouter)
 
 module.exports = router
