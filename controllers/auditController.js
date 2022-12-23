@@ -36,8 +36,11 @@ const addAudit = async (req, res) => {
 
 const getById = async (req, res) => {
 	const { id } = req.params
-	const audits = await Audits.findById(id)
-	
+	const audits = await Audits.findById(id).populate({
+		path: 'sign.user',
+		select: 'username-_id',
+	})
+
 	if (!audits) return res.status(204).json({ message: 'No template found' })
 	res.json(audits)
 }
@@ -59,4 +62,4 @@ const updateSign = async (req, res) => {
 	}
 }
 
-module.exports = { getAllAudit, addAudit, getById ,updateSign }
+module.exports = { getAllAudit, addAudit, getById, updateSign }

@@ -16,6 +16,7 @@ const handleRefreshToken = async (req, res) => {
 				if (err) return res.sendStatus(403)
 				const userId = user._id
 				const role = user.role
+				const username = user.username
 				const accessToken = jwt.sign(
 					{ userId },
 					process.env.ACCESS_TOKEN_SECRET,
@@ -23,7 +24,7 @@ const handleRefreshToken = async (req, res) => {
 						expiresIn: '15s',
 					}
 				)
-				res.json({ accessToken, role })
+				res.json({ accessToken, role, username })
 			}
 		)
 	} catch (error) {

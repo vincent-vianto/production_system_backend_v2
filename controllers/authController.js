@@ -12,6 +12,7 @@ const handleLogin = async (req, res) => {
 		if (!match) return res.status(400).json({ msg: 'Wrong Password' })
 		const userId = user._id
 		const role = user.role
+		const username = user.username
 
 		const accessToken = jwt.sign({ userId }, process.env.ACCESS_TOKEN_SECRET, {
 			expiresIn: '20s',
@@ -28,7 +29,7 @@ const handleLogin = async (req, res) => {
 		// 	httpOnly: true,
 		// 	maxAge: 24 * 60 * 60 * 1000,
 		// })
-		res.json({ accessToken, refreshToken, role })
+		res.json({ accessToken, refreshToken, role, username})
 	} catch (error) {
 		res.status(400).json({ msg: 'Username not found' })
 	}
