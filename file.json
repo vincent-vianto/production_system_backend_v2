@@ -1,229 +1,1391 @@
 {
-    "name": "QA In Process Line Audit Check List [SMT Area]",
-    "description": "Fill in following question with below score n/ 3  -  System/Control in place and acceptable n/ 2  -  System/Control in place but need minor improvement n/ 1  -  System/Control in place but NOT meeting requirement n/ 0  -  System/Control NOT in place",
-    "form_number": "FM-ATI-QC-038 rev 2",
-    "template": [
+    "_id" : ObjectId("63a0363c728e3b8501b631b0"),
+    "name" : "QA In Process Line Audit Check List [SMT Area]",
+    "description" : "Fill in following question with below score\n3  -  System/Control in place and acceptable \n2  -  System/Control in place but need minor improvement\n1  -  System/Control in place but NOT meeting requirement\n0  -  System/Control NOT in place",
+    "form_number" : "FM-ATI-QC-038",
+    "template" : [
         {
-            "category": "General",
-            "items": [
+            "category" : "General",
+            "items" : [
                 {
-                    "item": "Auditor",
-                    "field": "text"
+                    "item" : "Auditor",
+                    "field" : "text"
                 },
                 {
-                    "item": "Auditee",
-                    "field": "text"
+                    "item" : "Auditee",
+                    "field" : "text"
                 },
                 {
-                    "item": "Score",
-                    "field": "number"
+                    "item" : "Score",
+                    "field" : "number"
                 }
-            ]
+            ],
+            "_id" : ObjectId("63a0363c728e3b8501b631b1")
         },
         {
-            "category": "Production Line",
-            "items": [
+            "category" : "Production Line",
+            "items" : [
                 {
-                    "item": "Is the solder paste or epoxy not more than 96 hours usage in line ?",
-                    "field": "radio",
-                    "min": 0,
-                    "max": 3,
-                    "comment": true
+                    "item" : "Is the solder paste or epoxy not more than 96 hours usage in line ?",
+                    "field" : "radio",
+                    "min" : NumberInt(0),
+                    "max" : NumberInt(3),
+                    "comment" : true
                 },
                 {
-                    "item": "Are components in feeders prepared base on loading list ?",
-                    "field": "radio",
-                    "min": 0,
-                    "max": 3,
-                    "comment": true
+                    "item" : "Are components in feeders prepared base on loading list ?",
+                    "field" : "radio",
+                    "min" : NumberInt(0),
+                    "max" : NumberInt(3),
+                    "comment" : true
                 },
                 {
-                    "item": "Is the 'Top up component record' recorded correctly and the range value within specification base from BOM & Agile ?",
-                    "field": "radio",
-                    "min": 0,
-                    "max": 3,
-                    "comment": true
+                    "item" : "Is the 'Top up component record' recorded correctly and the range value within specification base from BOM & Agile ?",
+                    "field" : "radio",
+                    "min" : NumberInt(0),
+                    "max" : NumberInt(3),
+                    "comment" : true
                 },
                 {
-                    "item": "Is there a temperature profile taken then printed for every Friday and every  PT / FAS model?",
-                    "field": "radio",
-                    "min": 0,
-                    "max": 3,
-                    "comment": true
+                    "item" : "Is there a temperature profile taken then printed for every Friday and every  PT / FAS model?",
+                    "field" : "radio",
+                    "min" : NumberInt(0),
+                    "max" : NumberInt(3),
+                    "comment" : true
                 },
                 {
-                    "item": "Is the temperature profile taken within or according to Matrix profile?",
-                    "field": "radio",
-                    "min": 0,
-                    "max": 3,
-                    "comment": true
+                    "item" : "Is the temperature profile taken within or according to Matrix profile?",
+                    "field" : "radio",
+                    "min" : NumberInt(0),
+                    "max" : NumberInt(3),
+                    "comment" : true
                 },
                 {
-                    "item": "Is there a WI displayed for each operator to follow and according model running and with latest rev ?",
-                    "field": "radio",
-                    "min": 0,
-                    "max": 3,
-                    "comment": true
+                    "item" : "Is there a WI displayed for each operator to follow and according model running and with latest rev ?",
+                    "field" : "radio",
+                    "min" : NumberInt(0),
+                    "max" : NumberInt(3),
+                    "comment" : true
                 },
                 {
-                    "item": "Does operator understand and works task according to WI ?",
-                    "field": "radio",
-                    "min": 0,
-                    "max": 3,
-                    "comment": true
+                    "item" : "Does operator understand and works task according to WI ?",
+                    "field" : "radio",
+                    "min" : NumberInt(0),
+                    "max" : NumberInt(3),
+                    "comment" : true
                 },
                 {
-                    "item": "Is there a work instruction that states the solder iron temperature and recorded base on product requirement?",
-                    "field": "radio",
-                    "min": 0,
-                    "max": 3,
-                    "comment": true
+                    "item" : "Is there a work instruction that states the solder iron temperature and recorded base on product requirement?",
+                    "field" : "radio",
+                    "min" : NumberInt(0),
+                    "max" : NumberInt(3),
+                    "comment" : true
                 },
                 {
-                    "item": "Is there solder wire usage according to spec ?",
-                    "field": "radio",
-                    "min": 0,
-                    "max": 3,
-                    "comment": true
+                    "item" : "Is there solder wire usage according to spec ?",
+                    "field" : "radio",
+                    "min" : NumberInt(0),
+                    "max" : NumberInt(3),
+                    "comment" : true
                 },
                 {
-                    "item": "Is there a proper segregation of good and reject units with proper identification labels?",
-                    "field": "radio",
-                    "min": 0,
-                    "max": 3,
-                    "comment": true
+                    "item" : "Is there a proper segregation of good and reject units with proper identification labels?",
+                    "field" : "radio",
+                    "min" : NumberInt(0),
+                    "max" : NumberInt(3),
+                    "comment" : true
                 }
-            ]
+            ],
+            "_id" : ObjectId("63a0363c728e3b8501b631b2")
         },
         {
-            "category": "Non Conformance Handling",
-            "items": [
+            "category" : "Non Conformance Handling",
+            "items" : [
                 {
-                    "item": "Is there a proper segregation of good and reject units with proper identification labels?",
-                    "field": "radio",
-                    "min": 0,
-                    "max": 3,
-                    "comment": true
+                    "item" : "Is there a proper segregation of good and reject units with proper identification labels?",
+                    "field" : "radio",
+                    "min" : NumberInt(0),
+                    "max" : NumberInt(3),
+                    "comment" : true
                 },
                 {
-                    "item": "Is there proper identification of reject / on hold units & an available area for its staging?",
-                    "field": "radio",
-                    "min": 0,
-                    "max": 3,
-                    "comment": true
+                    "item" : "Is there proper identification of reject / on hold units & an available area for its staging?",
+                    "field" : "radio",
+                    "min" : NumberInt(0),
+                    "max" : NumberInt(3),
+                    "comment" : true
                 }
-            ]
+            ],
+            "_id" : ObjectId("63a0363c728e3b8501b631b3")
         },
         {
-            "category": "ESD",
-            "items": [
+            "category" : "ESD",
+            "items" : [
                 {
-                    "item": "Have all grounding been checked and recorded ?",
-                    "field": "radio",
-                    "min": 0,
-                    "max": 3,
-                    "comment": true
+                    "item" : "Have all grounding been checked and recorded ?",
+                    "field" : "radio",
+                    "min" : NumberInt(0),
+                    "max" : NumberInt(3),
+                    "comment" : true
                 },
                 {
-                    "item": "Is the daily wristrap checking conducted and recorded ?",
-                    "field": "radio",
-                    "min": 0,
-                    "max": 3,
-                    "comment": true
+                    "item" : "Is the daily wristrap checking conducted and recorded ?",
+                    "field" : "radio",
+                    "min" : NumberInt(0),
+                    "max" : NumberInt(3),
+                    "comment" : true
                 },
                 {
-                    "item": "Does the operator use wristrap correctly ?",
-                    "field": "radio",
-                    "min": 0,
-                    "max": 3,
-                    "comment": true
+                    "item" : "Does the operator use wristrap correctly ?",
+                    "field" : "radio",
+                    "min" : NumberInt(0),
+                    "max" : NumberInt(3),
+                    "comment" : true
                 },
                 {
-                    "item": "Is the PCBA handled according to ESD procedure ?",
-                    "field": "radio",
-                    "min": 0,
-                    "max": 3,
-                    "comment": true
+                    "item" : "Is the PCBA handled according to ESD procedure ?",
+                    "field" : "radio",
+                    "min" : NumberInt(0),
+                    "max" : NumberInt(3),
+                    "comment" : true
                 },
                 {
-                    "item": "Are there non-ESD safe materials near the PCBA?",
-                    "field": "radio",
-                    "min": 0,
-                    "max": 3,
-                    "comment": true
+                    "item" : "Are there non-ESD safe materials near the PCBA?",
+                    "field" : "radio",
+                    "min" : NumberInt(0),
+                    "max" : NumberInt(3),
+                    "comment" : true
                 }
-            ]
+            ],
+            "_id" : ObjectId("63a0363c728e3b8501b631b4")
         },
         {
-            "category": "MSD ( Moisturize Sensitive Device )",
-            "items": [
+            "category" : "MSD ( Moisturize Sensitive Device )",
+            "items" : [
                 {
-                    "item": "Are MSD part storage & handling according to MSD procedure?",
-                    "field": "radio",
-                    "min": 0,
-                    "max": 3,
-                    "comment": true
+                    "item" : "Are MSD part storage & handling according to MSD procedure?",
+                    "field" : "radio",
+                    "min" : NumberInt(0),
+                    "max" : NumberInt(3),
+                    "comment" : true
                 },
                 {
-                    "item": "Is temperature and humidity controlled ?",
-                    "field": "radio",
-                    "min": 0,
-                    "max": 3,
-                    "comment": true
+                    "item" : "Is temperature and humidity controlled ?",
+                    "field" : "radio",
+                    "min" : NumberInt(0),
+                    "max" : NumberInt(3),
+                    "comment" : true
                 }
-            ]
+            ],
+            "_id" : ObjectId("63a0363c728e3b8501b631b5")
         },
         {
-            "category": "5S",
-            "items": [
+            "category" : "5S",
+            "items" : [
                 {
-                    "item": "Are all the sets properly identified & at the correct area ?",
-                    "field": "radio",
-                    "min": 0,
-                    "max": 3,
-                    "comment": true
+                    "item" : "Are all the sets properly identified & at the correct area ?",
+                    "field" : "radio",
+                    "min" : NumberInt(0),
+                    "max" : NumberInt(3),
+                    "comment" : true
                 },
                 {
-                    "item": "Is there proper set arrangement to prevent secondary problem ?",
-                    "field": "radio",
-                    "min": 0,
-                    "max": 3,
-                    "comment": true
+                    "item" : "Is there proper set arrangement to prevent secondary problem ?",
+                    "field" : "radio",
+                    "min" : NumberInt(0),
+                    "max" : NumberInt(3),
+                    "comment" : true
                 },
                 {
-                    "item": "Is there unnecessary materials on the line ?",
-                    "field": "radio",
-                    "min": 0,
-                    "max": 3,
-                    "comment": true
+                    "item" : "Is there unnecessary materials on the line ?",
+                    "field" : "radio",
+                    "min" : NumberInt(0),
+                    "max" : NumberInt(3),
+                    "comment" : true
                 },
                 {
-                    "item": "Is production area cleanliness being controlled well? ",
-                    "field": "radio",
-                    "min": 0,
-                    "max": 3,
-                    "comment": true
+                    "item" : "Is production area cleanliness being controlled well? ",
+                    "field" : "radio",
+                    "min" : NumberInt(0),
+                    "max" : NumberInt(3),
+                    "comment" : true
                 },
                 {
-                    "item": "Does the working area have sufficient light illumination?",
-                    "field": "radio",
-                    "min": 0,
-                    "max": 3,
-                    "comment": true
+                    "item" : "Does the working area have sufficient light illumination?",
+                    "field" : "radio",
+                    "min" : NumberInt(0),
+                    "max" : NumberInt(3),
+                    "comment" : true
                 }
-            ]
+            ],
+            "_id" : ObjectId("63a0363c728e3b8501b631b6")
         },
         {
-            "category": "Important Thing",
-            "items": [
+            "category" : "Important Thing",
+            "items" : [
                 {
-                    "item": "Is the loading list was updated as per ECO?",
-                    "field": "radio",
-                    "min": 0,
-                    "max": 3,
-                    "comment": true
+                    "item" : "Is the loading list was updated as per ECO?",
+                    "field" : "radio",
+                    "min" : NumberInt(0),
+                    "max" : NumberInt(3),
+                    "comment" : true
                 }
-            ]
+            ],
+            "_id" : ObjectId("63a0363c728e3b8501b631b7")
         }
-    ]
+    ],
+    "__v" : NumberInt(0)
+}
+{
+    "_id" : ObjectId("63a5d5ce777e49523b63aa21"),
+    "name" : "QA In Process Line Audit Check List [ FA Area ]",
+    "description" : "Fill in following question with below score\n3  -  System/Control in place and acceptable \n2  -  System/Control in place but need minor improvement\n1  -  System/Control in place but NOT meeting requirement\n0  -  System/Control NOT in place",
+    "form_number" : "FM-ATI-QC-024",
+    "template" : [
+        {
+            "category" : "General",
+            "items" : [
+                {
+                    "item" : "Auditor",
+                    "field" : "text"
+                },
+                {
+                    "item" : "Auditee",
+                    "field" : "text"
+                },
+                {
+                    "item" : "Score",
+                    "field" : "number"
+                }
+            ],
+            "_id" : ObjectId("63a5d5ce777e49523b63aa22")
+        },
+        {
+            "category" : "Production Line",
+            "items" : [
+                {
+                    "item" : "Is there WI displayed for each operator and according model running and with latest rev ?",
+                    "field" : "radio",
+                    "min" : NumberInt(0),
+                    "max" : NumberInt(3),
+                    "comment" : true
+                },
+                {
+                    "item" : "Does WI state part number, usage and location clearly ?",
+                    "field" : "radio",
+                    "min" : NumberInt(0),
+                    "max" : NumberInt(3),
+                    "comment" : true
+                },
+                {
+                    "item" : "Does operator understand and work follow WI ?",
+                    "field" : "radio",
+                    "min" : NumberInt(0),
+                    "max" : NumberInt(3),
+                    "comment" : true
+                },
+                {
+                    "item" : "Is there important instruction ( ie caution point, reminder report ) highlighted ?",
+                    "field" : "radio",
+                    "min" : NumberInt(0),
+                    "max" : NumberInt(3),
+                    "comment" : true
+                },
+                {
+                    "item" : "Does part container have proper indication, and put with correct part inside ?",
+                    "field" : "radio",
+                    "min" : NumberInt(0),
+                    "max" : NumberInt(3),
+                    "comment" : true
+                },
+                {
+                    "item" : "Does part preparation follow counting system for missing part / extra part early detection ?",
+                    "field" : "radio",
+                    "min" : NumberInt(0),
+                    "max" : NumberInt(3),
+                    "comment" : true
+                },
+                {
+                    "item" : "Does opr has valid training certificate ?",
+                    "field" : "radio",
+                    "min" : NumberInt(0),
+                    "max" : NumberInt(3),
+                    "comment" : true
+                }
+            ],
+            "_id" : ObjectId("63a5d5ce777e49523b63aa23")
+        },
+        {
+            "category" : "Mini store",
+            "items" : [
+                {
+                    "item" : "Does part kept with correct label ( P/N, Qty, Kitting label  ) ",
+                    "field" : "radio",
+                    "min" : NumberInt(0),
+                    "max" : NumberInt(3),
+                    "comment" : true
+                },
+                {
+                    "item" : "Does part storage with proper arrangement ?",
+                    "field" : "radio",
+                    "min" : NumberInt(0),
+                    "max" : NumberInt(3),
+                    "comment" : true
+                },
+                {
+                    "item" : "Does material storage still  within expiration date ?",
+                    "field" : "radio",
+                    "min" : NumberInt(0),
+                    "max" : NumberInt(3),
+                    "comment" : true
+                },
+                {
+                    "item" : "Does material base on Work order / pick list, [qty,operation code]",
+                    "field" : "radio",
+                    "min" : NumberInt(0),
+                    "max" : NumberInt(3),
+                    "comment" : true
+                },
+                {
+                    "item" : "Are the available Work order that is Open more than two month?",
+                    "field" : "radio",
+                    "min" : NumberInt(0),
+                    "max" : NumberInt(3),
+                    "comment" : true
+                }
+            ],
+            "_id" : ObjectId("63a5d5ce777e49523b63aa24")
+        },
+        {
+            "category" : "ESD",
+            "items" : [
+                {
+                    "item" : "Have all grounding been checked and recorded ?",
+                    "field" : "radio",
+                    "min" : NumberInt(0),
+                    "max" : NumberInt(3),
+                    "comment" : true
+                },
+                {
+                    "item" : "Is the daily wristrap checking conducted and recorded ?",
+                    "field" : "radio",
+                    "min" : NumberInt(0),
+                    "max" : NumberInt(3),
+                    "comment" : true
+                },
+                {
+                    "item" : "Does the operator use wristrap correctly ?",
+                    "field" : "radio",
+                    "min" : NumberInt(0),
+                    "max" : NumberInt(3),
+                    "comment" : true
+                },
+                {
+                    "item" : "Is the PCBA handled according to ESD procedure ?",
+                    "field" : "radio",
+                    "min" : NumberInt(0),
+                    "max" : NumberInt(3),
+                    "comment" : true
+                },
+                {
+                    "item" : "Are there non-ESD safe materials near the PCBA?",
+                    "field" : "radio",
+                    "min" : NumberInt(0),
+                    "max" : NumberInt(3),
+                    "comment" : true
+                }
+            ],
+            "_id" : ObjectId("63a5d5ce777e49523b63aa25")
+        },
+        {
+            "category" : "Non Conformance Handling",
+            "items" : [
+                {
+                    "item" : "Is there reject tag & reject / on hold area available near by line ?",
+                    "field" : "radio",
+                    "min" : NumberInt(0),
+                    "max" : NumberInt(3),
+                    "comment" : true
+                },
+                {
+                    "item" : "Is there proper indication for repaired, unfinished, & rejected set ?",
+                    "field" : "radio",
+                    "min" : NumberInt(0),
+                    "max" : NumberInt(3),
+                    "comment" : true
+                }
+            ],
+            "_id" : ObjectId("63a5d5ce777e49523b63aa26")
+        },
+        {
+            "category" : "5S",
+            "items" : [
+                {
+                    "item" : "Are all the sets properly identified & at the correct area ?",
+                    "field" : "radio",
+                    "min" : NumberInt(0),
+                    "max" : NumberInt(3),
+                    "comment" : true
+                },
+                {
+                    "item" : "Is there proper set arrangement to prevent secondary problem ?",
+                    "field" : "radio",
+                    "min" : NumberInt(0),
+                    "max" : NumberInt(3),
+                    "comment" : true
+                },
+                {
+                    "item" : "Is there unnecessary materials on the line ?",
+                    "field" : "radio",
+                    "min" : NumberInt(0),
+                    "max" : NumberInt(3),
+                    "comment" : true
+                },
+                {
+                    "item" : "Is production area cleanliness being controlled well? ",
+                    "field" : "radio",
+                    "min" : NumberInt(0),
+                    "max" : NumberInt(3),
+                    "comment" : true
+                },
+                {
+                    "item" : "Does the working area have sufficient light illumination?",
+                    "field" : "radio",
+                    "min" : NumberInt(0),
+                    "max" : NumberInt(3),
+                    "comment" : true
+                }
+            ],
+            "_id" : ObjectId("63a5d5ce777e49523b63aa27")
+        },
+        {
+            "category" : "Important Thing",
+            "items" : [
+                {
+                    "item" : "Is there screw gap checking using filler gap after screwing ?",
+                    "field" : "radio",
+                    "min" : NumberInt(0),
+                    "max" : NumberInt(3),
+                    "comment" : true
+                },
+                {
+                    "item" : "Does screw mounted on PCB been counted & marked?",
+                    "field" : "radio",
+                    "min" : NumberInt(0),
+                    "max" : NumberInt(3),
+                    "comment" : true
+                },
+                {
+                    "item" : "Is there cleaning process before pasting gasket ?",
+                    "field" : "radio",
+                    "min" : NumberInt(0),
+                    "max" : NumberInt(3),
+                    "comment" : true
+                },
+                {
+                    "item" : "Is there proper arrangement for FANs to prevent damaging ?",
+                    "field" : "radio",
+                    "min" : NumberInt(0),
+                    "max" : NumberInt(3),
+                    "comment" : true
+                },
+                {
+                    "item" : "Does opr check SN, EPROM, FIS, Mac Address label on the PCBA vs unit ?",
+                    "field" : "radio",
+                    "min" : NumberInt(0),
+                    "max" : NumberInt(3),
+                    "comment" : true
+                },
+                {
+                    "item" : "Is there safety cover used to protect PCBA from chassis standoff when fitting PCBA to the chassis base ?",
+                    "field" : "radio",
+                    "min" : NumberInt(0),
+                    "max" : NumberInt(3),
+                    "comment" : true
+                },
+                {
+                    "item" : "Is there proper handling to avoid component on PCB hole positioning damage during fitting PCBA to chassis base and screwing ?",
+                    "field" : "radio",
+                    "min" : NumberInt(0),
+                    "max" : NumberInt(3),
+                    "comment" : true
+                },
+                {
+                    "item" : "Does on line opr & staff clean from accessories at their hand to prevent secondary reject ?",
+                    "field" : "radio",
+                    "min" : NumberInt(0),
+                    "max" : NumberInt(3),
+                    "comment" : true
+                },
+                {
+                    "item" : "Does Visual check count screw on the chassis ?",
+                    "field" : "radio",
+                    "min" : NumberInt(0),
+                    "max" : NumberInt(3),
+                    "comment" : true
+                },
+                {
+                    "item" : "Does visual check using spot light to check foreign mtrl inside unit & pin connector ?",
+                    "field" : "radio",
+                    "min" : NumberInt(0),
+                    "max" : NumberInt(3),
+                    "comment" : true
+                },
+                {
+                    "item" : "Does visual check perform shaking test ?",
+                    "field" : "radio",
+                    "min" : NumberInt(0),
+                    "max" : NumberInt(3),
+                    "comment" : true
+                }
+            ],
+            "_id" : ObjectId("63a5d5ce777e49523b63aa28")
+        }
+    ],
+    "__v" : NumberInt(0)
+}
+{
+    "_id" : ObjectId("63a5dbfd777e49523b63ac3a"),
+    "name" : "QA In Process Line Audit Check List [ FCT Area ]",
+    "description" : "Fill in following question with below score\n3  -  System/Control in place and acceptable \n2  -  System/Control in place but need minor improvement\n1  -  System/Control in place but NOT meeting requirement\n0  -  System/Control NOT in place",
+    "form_number" : "FM-ATI-QC-025",
+    "template" : [
+        {
+            "category" : "General",
+            "items" : [
+                {
+                    "item" : "Auditor",
+                    "field" : "text"
+                },
+                {
+                    "item" : "Auditee",
+                    "field" : "text"
+                },
+                {
+                    "item" : "Score",
+                    "field" : "number"
+                }
+            ],
+            "_id" : ObjectId("63a5dbfd777e49523b63ac3b")
+        },
+        {
+            "category" : "Production Line",
+            "items" : [
+                {
+                    "item" : "Is there WI displayed for each operator and according model running and with latest rev ?",
+                    "field" : "radio",
+                    "min" : NumberInt(0),
+                    "max" : NumberInt(3),
+                    "comment" : true
+                },
+                {
+                    "item" : "Does WI state part number, usage and location clearly ?",
+                    "field" : "radio",
+                    "min" : NumberInt(0),
+                    "max" : NumberInt(3),
+                    "comment" : true
+                },
+                {
+                    "item" : "Does operator understand and work follow WI ?",
+                    "field" : "radio",
+                    "min" : NumberInt(0),
+                    "max" : NumberInt(3),
+                    "comment" : true
+                },
+                {
+                    "item" : "Is there important instruction ( ie caution point, reminder report ) highlighted ?",
+                    "field" : "radio",
+                    "min" : NumberInt(0),
+                    "max" : NumberInt(3),
+                    "comment" : true
+                },
+                {
+                    "item" : "Does part container have proper indication, and put with correct part inside ?",
+                    "field" : "radio",
+                    "min" : NumberInt(0),
+                    "max" : NumberInt(3),
+                    "comment" : true
+                },
+                {
+                    "item" : "Does part preparation follow counting system for missing part / extra part early detection ?",
+                    "field" : "radio",
+                    "min" : NumberInt(0),
+                    "max" : NumberInt(3),
+                    "comment" : true
+                },
+                {
+                    "item" : "Does opr has valid training certificate ?",
+                    "field" : "radio",
+                    "min" : NumberInt(0),
+                    "max" : NumberInt(3),
+                    "comment" : true
+                }
+            ],
+            "_id" : ObjectId("63a5dbfd777e49523b63ac3c")
+        },
+        {
+            "category" : "Printing",
+            "items" : [
+                {
+                    "item" : "Is there log book for printing label checked & approved by QC ? ",
+                    "field" : "radio",
+                    "min" : NumberInt(0),
+                    "max" : NumberInt(3),
+                    "comment" : true
+                },
+                {
+                    "item" : "Is there label reject replacement log book checked and approved by QC ?",
+                    "field" : "radio",
+                    "min" : NumberInt(0),
+                    "max" : NumberInt(3),
+                    "comment" : true
+                }
+            ],
+            "_id" : ObjectId("63a5dbfd777e49523b63ac3d")
+        },
+        {
+            "category" : "FCT Equipment room",
+            "items" : [
+                {
+                    "item" : "Does equipment storage with proper arrangement to avoid damaging ?",
+                    "field" : "radio",
+                    "min" : NumberInt(0),
+                    "max" : NumberInt(3),
+                    "comment" : true
+                },
+                {
+                    "item" : "Does engg performed maintenance on the equipment ?",
+                    "field" : "radio",
+                    "min" : NumberInt(0),
+                    "max" : NumberInt(3),
+                    "comment" : true
+                },
+                {
+                    "item" : "Does equipment is within calibration date ?",
+                    "field" : "radio",
+                    "min" : NumberInt(0),
+                    "max" : NumberInt(3),
+                    "comment" : true
+                }
+            ],
+            "_id" : ObjectId("63a5dbfd777e49523b63ac3e")
+        },
+        {
+            "category" : "ESD",
+            "items" : [
+                {
+                    "item" : "Have all grounding been checked and recorded ?",
+                    "field" : "radio",
+                    "min" : NumberInt(0),
+                    "max" : NumberInt(3),
+                    "comment" : true
+                },
+                {
+                    "item" : "Is the daily wristrap checking conducted and recorded ?",
+                    "field" : "radio",
+                    "min" : NumberInt(0),
+                    "max" : NumberInt(3),
+                    "comment" : true
+                },
+                {
+                    "item" : "Does the operator use wristrap correctly ?",
+                    "field" : "radio",
+                    "min" : NumberInt(0),
+                    "max" : NumberInt(3),
+                    "comment" : true
+                },
+                {
+                    "item" : "Is the PCBA handled according to ESD procedure ?",
+                    "field" : "radio",
+                    "min" : NumberInt(0),
+                    "max" : NumberInt(3),
+                    "comment" : true
+                },
+                {
+                    "item" : "Are there non-ESD safe materials near the PCBA?",
+                    "field" : "radio",
+                    "min" : NumberInt(0),
+                    "max" : NumberInt(3),
+                    "comment" : true
+                }
+            ],
+            "_id" : ObjectId("63a5dbfd777e49523b63ac3f")
+        },
+        {
+            "category" : "Non Conformance Handling",
+            "items" : [
+                {
+                    "item" : "Is there reject tag & reject / on hold area available near by line ?",
+                    "field" : "radio",
+                    "min" : NumberInt(0),
+                    "max" : NumberInt(3),
+                    "comment" : true
+                },
+                {
+                    "item" : "Is there proper indication for repaired, unfinished, & rejected set ?",
+                    "field" : "radio",
+                    "min" : NumberInt(0),
+                    "max" : NumberInt(3),
+                    "comment" : true
+                }
+            ],
+            "_id" : ObjectId("63a5dbfd777e49523b63ac40")
+        },
+        {
+            "category" : "5S",
+            "items" : [
+                {
+                    "item" : "Are all the sets properly identified & at the correct area ?",
+                    "field" : "radio",
+                    "min" : NumberInt(0),
+                    "max" : NumberInt(3),
+                    "comment" : true
+                },
+                {
+                    "item" : "Is there proper set arrangement to prevent secondary problem ?",
+                    "field" : "radio",
+                    "min" : NumberInt(0),
+                    "max" : NumberInt(3),
+                    "comment" : true
+                },
+                {
+                    "item" : "Is there unnecessary materials on the line ?",
+                    "field" : "radio",
+                    "min" : NumberInt(0),
+                    "max" : NumberInt(3),
+                    "comment" : true
+                },
+                {
+                    "item" : "Is production area cleanliness being controlled well? ",
+                    "field" : "radio",
+                    "min" : NumberInt(0),
+                    "max" : NumberInt(3),
+                    "comment" : true
+                },
+                {
+                    "item" : "Does the working area have sufficient light illumination?",
+                    "field" : "radio",
+                    "min" : NumberInt(0),
+                    "max" : NumberInt(3),
+                    "comment" : true
+                }
+            ],
+            "_id" : ObjectId("63a5dbfd777e49523b63ac41")
+        },
+        {
+            "category" : "Important Point",
+            "items" : [
+                {
+                    "item" : "Does on line opr & staff clean from accessories at their hand to prevent secondary reject ?",
+                    "field" : "radio",
+                    "min" : NumberInt(0),
+                    "max" : NumberInt(3),
+                    "comment" : true
+                },
+                {
+                    "item" : "Availibility of fans for PCBA test",
+                    "field" : "radio",
+                    "min" : NumberInt(0),
+                    "max" : NumberInt(3),
+                    "comment" : true
+                },
+                {
+                    "item" : "Does Visual check count screw on the chassis ?",
+                    "field" : "radio",
+                    "min" : NumberInt(0),
+                    "max" : NumberInt(3),
+                    "comment" : true
+                },
+                {
+                    "item" : "Does visual check using spot light to check foreign mtrl inside unit & pin connector ?",
+                    "field" : "radio",
+                    "min" : NumberInt(0),
+                    "max" : NumberInt(3),
+                    "comment" : true
+                },
+                {
+                    "item" : "Does visual check perform shaking test ?",
+                    "field" : "radio",
+                    "min" : NumberInt(0),
+                    "max" : NumberInt(3),
+                    "comment" : true
+                },
+                {
+                    "item" : "Prod should not using fresh unit as golden unit?",
+                    "field" : "radio",
+                    "min" : NumberInt(0),
+                    "max" : NumberInt(3),
+                    "comment" : true
+                }
+            ],
+            "_id" : ObjectId("63a5dbfd777e49523b63ac42")
+        }
+    ],
+    "__v" : NumberInt(0)
+}
+{
+    "_id" : ObjectId("63a5e529777e49523b63afd6"),
+    "name" : "QA In Process Line Audit Check List [ MI Area ]",
+    "description" : "Fill in following question with below score\n3  -  System/Control in place and acceptable \n2  -  System/Control in place but need minor improvement\n1  -  System/Control in place but NOT meeting requirement\n0  -  System/Control NOT in place",
+    "form_number" : "FM-ATI-QC-040",
+    "template" : [
+        {
+            "category" : "General",
+            "items" : [
+                {
+                    "item" : "Auditor",
+                    "field" : "text"
+                },
+                {
+                    "item" : "Auditee",
+                    "field" : "text"
+                },
+                {
+                    "item" : "Score",
+                    "field" : "number"
+                }
+            ],
+            "_id" : ObjectId("63a5e529777e49523b63afd7")
+        },
+        {
+            "category" : "Production Line",
+            "items" : [
+                {
+                    "item" : "Is there WI displayed for each operator and according model running and with latest rev ?",
+                    "field" : "radio",
+                    "min" : NumberInt(0),
+                    "max" : NumberInt(3),
+                    "comment" : true
+                },
+                {
+                    "item" : "Does WI state part number, usage and location clearly ?",
+                    "field" : "radio",
+                    "min" : NumberInt(0),
+                    "max" : NumberInt(3),
+                    "comment" : true
+                },
+                {
+                    "item" : "Does operator understand and work follow WI ?",
+                    "field" : "radio",
+                    "min" : NumberInt(0),
+                    "max" : NumberInt(3),
+                    "comment" : true
+                },
+                {
+                    "item" : "Is there important instruction ( ie caution point, reminder report ) highlighted ?",
+                    "field" : "radio",
+                    "min" : NumberInt(0),
+                    "max" : NumberInt(3),
+                    "comment" : true
+                },
+                {
+                    "item" : "Does part container have proper indication, and put with correct part inside ?",
+                    "field" : "radio",
+                    "min" : NumberInt(0),
+                    "max" : NumberInt(3),
+                    "comment" : true
+                },
+                {
+                    "item" : "Does part preparation follow counting system for missing part / extra part early detection ?",
+                    "field" : "radio",
+                    "min" : NumberInt(0),
+                    "max" : NumberInt(3),
+                    "comment" : true
+                },
+                {
+                    "item" : "Does opr has valid training certificate ?",
+                    "field" : "radio",
+                    "min" : NumberInt(0),
+                    "max" : NumberInt(3),
+                    "comment" : true
+                }
+            ],
+            "_id" : ObjectId("63a5e529777e49523b63afd8")
+        },
+        {
+            "category" : "Mini store",
+            "items" : [
+                {
+                    "item" : "Does part kept with correct label ( P/N, Qty, Kitting label  ) ",
+                    "field" : "radio",
+                    "min" : NumberInt(0),
+                    "max" : NumberInt(3),
+                    "comment" : true
+                },
+                {
+                    "item" : "Does part storage with proper arrangement ?",
+                    "field" : "radio",
+                    "min" : NumberInt(0),
+                    "max" : NumberInt(3),
+                    "comment" : true
+                },
+                {
+                    "item" : "Does material storage still  within expiration date ?",
+                    "field" : "radio",
+                    "min" : NumberInt(0),
+                    "max" : NumberInt(3),
+                    "comment" : true
+                },
+                {
+                    "item" : "Does material base on Work order / pick list, [qty,operation code]",
+                    "field" : "radio",
+                    "min" : NumberInt(0),
+                    "max" : NumberInt(3),
+                    "comment" : true
+                },
+                {
+                    "item" : "Are the available Work order that is Open more than two month?",
+                    "field" : "radio",
+                    "min" : NumberInt(0),
+                    "max" : NumberInt(3),
+                    "comment" : true
+                }
+            ],
+            "_id" : ObjectId("63a5e529777e49523b63afd9")
+        },
+        {
+            "category" : "ESD",
+            "items" : [
+                {
+                    "item" : "Have all grounding been checked and recorded ?",
+                    "field" : "radio",
+                    "min" : NumberInt(0),
+                    "max" : NumberInt(3),
+                    "comment" : true
+                },
+                {
+                    "item" : "Is the daily wristrap checking conducted and recorded ?",
+                    "field" : "radio",
+                    "min" : NumberInt(0),
+                    "max" : NumberInt(3),
+                    "comment" : true
+                },
+                {
+                    "item" : "Does the operator use wristrap correctly ?",
+                    "field" : "radio",
+                    "min" : NumberInt(0),
+                    "max" : NumberInt(3),
+                    "comment" : true
+                },
+                {
+                    "item" : "Is the PCBA handled according to ESD procedure ?",
+                    "field" : "radio",
+                    "min" : NumberInt(0),
+                    "max" : NumberInt(3),
+                    "comment" : true
+                },
+                {
+                    "item" : "Are there non-ESD safe materials near the PCBA?",
+                    "field" : "radio",
+                    "min" : NumberInt(0),
+                    "max" : NumberInt(3),
+                    "comment" : true
+                }
+            ],
+            "_id" : ObjectId("63a5e529777e49523b63afda")
+        },
+        {
+            "category" : "Non Conformance Handling",
+            "items" : [
+                {
+                    "item" : "Is there reject tag & reject / on hold area available near by line ?",
+                    "field" : "radio",
+                    "min" : NumberInt(0),
+                    "max" : NumberInt(3),
+                    "comment" : true
+                },
+                {
+                    "item" : "Is there proper indication for repaired, unfinished, & rejected set ?",
+                    "field" : "radio",
+                    "min" : NumberInt(0),
+                    "max" : NumberInt(3),
+                    "comment" : true
+                }
+            ],
+            "_id" : ObjectId("63a5e529777e49523b63afdb")
+        },
+        {
+            "category" : "5S",
+            "items" : [
+                {
+                    "item" : "Are all the sets properly identified & at the correct area ?",
+                    "field" : "radio",
+                    "min" : NumberInt(0),
+                    "max" : NumberInt(3),
+                    "comment" : true
+                },
+                {
+                    "item" : "Is there proper set arrangement to prevent secondary problem ?",
+                    "field" : "radio",
+                    "min" : NumberInt(0),
+                    "max" : NumberInt(3),
+                    "comment" : true
+                },
+                {
+                    "item" : "Is there unnecessary materials on the line ?",
+                    "field" : "radio",
+                    "min" : NumberInt(0),
+                    "max" : NumberInt(3),
+                    "comment" : true
+                },
+                {
+                    "item" : "Is production area cleanliness being controlled well? ",
+                    "field" : "radio",
+                    "min" : NumberInt(0),
+                    "max" : NumberInt(3),
+                    "comment" : true
+                },
+                {
+                    "item" : "Does the working area have sufficient light illumination?",
+                    "field" : "radio",
+                    "min" : NumberInt(0),
+                    "max" : NumberInt(3),
+                    "comment" : true
+                }
+            ],
+            "_id" : ObjectId("63a5e529777e49523b63afdc")
+        },
+        {
+            "category" : "Important Point",
+            "items" : [
+                {
+                    "item" : "Is there screw gap checking using filler gap after screwing ?",
+                    "field" : "radio",
+                    "min" : NumberInt(0),
+                    "max" : NumberInt(3),
+                    "comment" : true
+                },
+                {
+                    "item" : "Does screw mounted on PCB been counted & marked?",
+                    "field" : "radio",
+                    "min" : NumberInt(0),
+                    "max" : NumberInt(3),
+                    "comment" : true
+                },
+                {
+                    "item" : "Is the line free of stappler and un-controlled cutter knife ?",
+                    "field" : "radio",
+                    "min" : NumberInt(0),
+                    "max" : NumberInt(3),
+                    "comment" : true
+                },
+                {
+                    "item" : "Are the CONN components of P/N 050-000151 undamaged?",
+                    "field" : "radio",
+                    "min" : NumberInt(0),
+                    "max" : NumberInt(3),
+                    "comment" : true
+                },
+                {
+                    "item" : "COIN BATTERY to be free of flux, solvent, & residue.",
+                    "field" : "radio",
+                    "min" : NumberInt(0),
+                    "max" : NumberInt(3),
+                    "comment" : true
+                }
+            ],
+            "_id" : ObjectId("63a5e529777e49523b63afdd")
+        }
+    ],
+    "__v" : NumberInt(0)
+}
+{
+    "_id" : ObjectId("63a5e538777e49523b63afdf"),
+    "name" : "QA In Process Line Audit Check List [ Packing Area ]",
+    "description" : "Fill in following question with below score\n3  -  System/Control in place and acceptable \n2  -  System/Control in place but need minor improvement\n1  -  System/Control in place but NOT meeting requirement\n0  -  System/Control NOT in place",
+    "form_number" : "FM-ATI-QC-026",
+    "template" : [
+        {
+            "category" : "General",
+            "items" : [
+                {
+                    "item" : "Auditor",
+                    "field" : "text"
+                },
+                {
+                    "item" : "Auditee",
+                    "field" : "text"
+                },
+                {
+                    "item" : "Score",
+                    "field" : "number"
+                }
+            ],
+            "_id" : ObjectId("63a5e538777e49523b63afe0")
+        },
+        {
+            "category" : "Production Line",
+            "items" : [
+                {
+                    "item" : "Is there WI displayed for each operator and according model running and with latest rev ?",
+                    "field" : "radio",
+                    "min" : NumberInt(0),
+                    "max" : NumberInt(3),
+                    "comment" : true
+                },
+                {
+                    "item" : "Does WI state part number, usage and location clearly ?",
+                    "field" : "radio",
+                    "min" : NumberInt(0),
+                    "max" : NumberInt(3),
+                    "comment" : true
+                },
+                {
+                    "item" : "Does operator understand and work follow WI ?",
+                    "field" : "radio",
+                    "min" : NumberInt(0),
+                    "max" : NumberInt(3),
+                    "comment" : true
+                },
+                {
+                    "item" : "Is there important instruction ( ie caution point, reminder report ) highlighted ?",
+                    "field" : "radio",
+                    "min" : NumberInt(0),
+                    "max" : NumberInt(3),
+                    "comment" : true
+                },
+                {
+                    "item" : "Does part container have proper indication, and put with correct part inside ?",
+                    "field" : "radio",
+                    "min" : NumberInt(0),
+                    "max" : NumberInt(3),
+                    "comment" : true
+                },
+                {
+                    "item" : "Does part preparation follow counting system for missing part / extra part early detection ?",
+                    "field" : "radio",
+                    "min" : NumberInt(0),
+                    "max" : NumberInt(3),
+                    "comment" : true
+                },
+                {
+                    "item" : "Does opr has valid training certificate ?",
+                    "field" : "radio",
+                    "min" : NumberInt(0),
+                    "max" : NumberInt(3),
+                    "comment" : true
+                }
+            ],
+            "_id" : ObjectId("63a5e538777e49523b63afe1")
+        },
+        {
+            "category" : "Printing Room",
+            "items" : [
+                {
+                    "item" : "Is there WI available for different typical of label ? ",
+                    "field" : "radio",
+                    "min" : NumberInt(0),
+                    "max" : NumberInt(3),
+                    "comment" : true
+                },
+                {
+                    "item" : "Is there log book for printing label checked & approved by QC ?",
+                    "field" : "radio",
+                    "min" : NumberInt(0),
+                    "max" : NumberInt(3),
+                    "comment" : true
+                },
+                {
+                    "item" : "Is there label reject replacement log book checked and approved by QC?",
+                    "field" : "radio",
+                    "min" : NumberInt(0),
+                    "max" : NumberInt(3),
+                    "comment" : true
+                }
+            ],
+            "_id" : ObjectId("63a5e538777e49523b63afe2")
+        },
+        {
+            "category" : "Mini store",
+            "items" : [
+                {
+                    "item" : "Does part kept with correct label ( P/N, Qty, Kitting label  ) ",
+                    "field" : "radio",
+                    "min" : NumberInt(0),
+                    "max" : NumberInt(3),
+                    "comment" : true
+                },
+                {
+                    "item" : "Does part storage with proper arrangement ?",
+                    "field" : "radio",
+                    "min" : NumberInt(0),
+                    "max" : NumberInt(3),
+                    "comment" : true
+                },
+                {
+                    "item" : "Does material storage still  within expiration date ?",
+                    "field" : "radio",
+                    "min" : NumberInt(0),
+                    "max" : NumberInt(3),
+                    "comment" : true
+                },
+                {
+                    "item" : "Does material base on Work order / pick list, [qty,operation code]",
+                    "field" : "radio",
+                    "min" : NumberInt(0),
+                    "max" : NumberInt(3),
+                    "comment" : true
+                },
+                {
+                    "item" : "Are the available Work order that is Open more than two month?",
+                    "field" : "radio",
+                    "min" : NumberInt(0),
+                    "max" : NumberInt(3),
+                    "comment" : true
+                }
+            ],
+            "_id" : ObjectId("63a5e538777e49523b63afe3")
+        },
+        {
+            "category" : "ESD",
+            "items" : [
+                {
+                    "item" : "Have all grounding been checked and recorded ?",
+                    "field" : "radio",
+                    "min" : NumberInt(0),
+                    "max" : NumberInt(3),
+                    "comment" : true
+                },
+                {
+                    "item" : "Is the daily wristrap checking conducted and recorded ?",
+                    "field" : "radio",
+                    "min" : NumberInt(0),
+                    "max" : NumberInt(3),
+                    "comment" : true
+                },
+                {
+                    "item" : "Does the operator use wristrap correctly ?",
+                    "field" : "radio",
+                    "min" : NumberInt(0),
+                    "max" : NumberInt(3),
+                    "comment" : true
+                },
+                {
+                    "item" : "Is the PCBA handled according to ESD procedure ?",
+                    "field" : "radio",
+                    "min" : NumberInt(0),
+                    "max" : NumberInt(3),
+                    "comment" : true
+                },
+                {
+                    "item" : "Are there non-ESD safe materials near the PCBA?",
+                    "field" : "radio",
+                    "min" : NumberInt(0),
+                    "max" : NumberInt(3),
+                    "comment" : true
+                }
+            ],
+            "_id" : ObjectId("63a5e538777e49523b63afe4")
+        },
+        {
+            "category" : "Non Conformance Handling",
+            "items" : [
+                {
+                    "item" : "Is there reject tag & reject / on hold area available near by line ?",
+                    "field" : "radio",
+                    "min" : NumberInt(0),
+                    "max" : NumberInt(3),
+                    "comment" : true
+                },
+                {
+                    "item" : "Is there proper indication for repaired, unfinished, & rejected set ?",
+                    "field" : "radio",
+                    "min" : NumberInt(0),
+                    "max" : NumberInt(3),
+                    "comment" : true
+                }
+            ],
+            "_id" : ObjectId("63a5e538777e49523b63afe5")
+        },
+        {
+            "category" : "5S",
+            "items" : [
+                {
+                    "item" : "Are all the sets properly identified & at the correct area ?",
+                    "field" : "radio",
+                    "min" : NumberInt(0),
+                    "max" : NumberInt(3),
+                    "comment" : true
+                },
+                {
+                    "item" : "Is there proper set arrangement to prevent secondary problem ?",
+                    "field" : "radio",
+                    "min" : NumberInt(0),
+                    "max" : NumberInt(3),
+                    "comment" : true
+                },
+                {
+                    "item" : "Is there unnecessary materials on the line ?",
+                    "field" : "radio",
+                    "min" : NumberInt(0),
+                    "max" : NumberInt(3),
+                    "comment" : true
+                },
+                {
+                    "item" : "Is production area cleanliness being controlled well? ",
+                    "field" : "radio",
+                    "min" : NumberInt(0),
+                    "max" : NumberInt(3),
+                    "comment" : true
+                },
+                {
+                    "item" : "Does the working area have sufficient light illumination?",
+                    "field" : "radio",
+                    "min" : NumberInt(0),
+                    "max" : NumberInt(3),
+                    "comment" : true
+                }
+            ],
+            "_id" : ObjectId("63a5e538777e49523b63afe6")
+        },
+        {
+            "category" : "Important Point",
+            "items" : [
+                {
+                    "item" : "No WIP allowed in between operators ",
+                    "field" : "radio",
+                    "min" : NumberInt(0),
+                    "max" : NumberInt(3),
+                    "comment" : true
+                },
+                {
+                    "item" : "Does visual count qty screw on chassis",
+                    "field" : "radio",
+                    "min" : NumberInt(0),
+                    "max" : NumberInt(3),
+                    "comment" : true
+                },
+                {
+                    "item" : "Does on line opr & staff clean from accessories at their hand to prevent secondary reject ?",
+                    "field" : "radio",
+                    "min" : NumberInt(0),
+                    "max" : NumberInt(3),
+                    "comment" : true
+                },
+                {
+                    "item" : "Does Visual check count screw on the chassis ?",
+                    "field" : "radio",
+                    "min" : NumberInt(0),
+                    "max" : NumberInt(3),
+                    "comment" : true
+                },
+                {
+                    "item" : "Does visual check using spot light to check foreign mtrl inside unit & pin connector ?",
+                    "field" : "radio",
+                    "min" : NumberInt(0),
+                    "max" : NumberInt(3),
+                    "comment" : true
+                },
+                {
+                    "item" : "Does visual check perform shaking test ?",
+                    "field" : "radio",
+                    "min" : NumberInt(0),
+                    "max" : NumberInt(3),
+                    "comment" : true
+                }
+            ],
+            "_id" : ObjectId("63a5e538777e49523b63afe7")
+        }
+    ],
+    "__v" : NumberInt(0)
 }

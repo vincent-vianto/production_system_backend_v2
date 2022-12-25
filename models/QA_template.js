@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
-const Form_Templates = new Schema({
+const QA_template = new Schema({
 	name: {
 		type: String,
 		required: true,
@@ -24,4 +24,4 @@ const Form_Templates = new Schema({
 		},
 	],
 })
-module.exports = mongoose.model('Form_Template', Form_Templates)
+module.exports = mongoose.model('QA_template', QA_template)

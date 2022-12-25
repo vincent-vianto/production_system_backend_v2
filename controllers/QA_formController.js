@@ -1,7 +1,7 @@
-const Audits = require('../models/audit')
+const QA_Forms = require('../models/QA_form')
 
-const getAllAudit = async (req, res) => {
-	const audits = await Audits.find()
+const getAllForm = async (req, res) => {
+	const audits = await QA_Forms.find().select(['-form'])
 		.populate({
 			path: 'user',
 			select: 'username-_id',
@@ -16,7 +16,7 @@ const getAllAudit = async (req, res) => {
 
 const addAudit = async (req, res) => {
 	try {
-		const result = await Audits.create({
+		const result = await QA_Forms.create({
 			user: req.userId,
 			date: req.body.date,
 			form_number: req.body.form_number,
@@ -36,7 +36,7 @@ const addAudit = async (req, res) => {
 
 const getById = async (req, res) => {
 	const { id } = req.params
-	const audits = await Audits.findById(id).populate({
+	const audits = await QA_Forms.findById(id).populate({
 		path: 'sign.user',
 		select: 'username-_id',
 	})
@@ -52,7 +52,7 @@ const updateSign = async (req, res) => {
 			accept: req.body.accept,
 			user: req.userId,
 		}
-		const result = await Audits.findByIdAndUpdate(id, { sign })
+		const result = await QA_Forms.findByIdAndUpdate(id, { sign })
 
 		console.log(result)
 
@@ -62,4 +62,4 @@ const updateSign = async (req, res) => {
 	}
 }
 
-module.exports = { getAllAudit, addAudit, getById, updateSign }
+module.exports = { getAllForm, addAudit, getById, updateSign }

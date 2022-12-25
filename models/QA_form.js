@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
-const Audits = new Schema({
+const QA_form = new Schema({
 	user: {
 		type: Schema.Types.ObjectId,
 		required: true,
@@ -45,4 +45,4 @@ const Audits = new Schema({
 		},
 	],
 })
-module.exports = mongoose.model('Audits', Audits)
+module.exports = mongoose.model('QA_Form', QA_form)
