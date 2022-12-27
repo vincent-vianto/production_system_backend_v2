@@ -1,7 +1,8 @@
-const QA_Forms = require('../models/QA_form')
+const Engineering_Forms = require('../models/Engineering_form')
 
 const getAllForm = async (req, res) => {
-	const QA_form = await QA_Forms.find().select(['-form'])
+	const Engineering_Form = await Engineering_Forms.find()
+		.select(['-form'])
 		.populate({
 			path: 'user',
 			select: 'username-_id',
@@ -10,19 +11,19 @@ const getAllForm = async (req, res) => {
 			path: 'sign.user',
 			select: 'username-_id',
 		})
-	if (!QA_form) return res.status(204).json({ message: 'No template found' })
-	res.json(QA_form)
+	if (!Engineering_Form)
+		return res.status(204).json({ message: 'No template found' })
+	res.json(Engineering_Form)
 }
 
 const addForm = async (req, res) => {
 	try {
-		const result = await QA_Forms.create({
+		const result = await Engineering_Forms.create({
 			user: req.userId,
 			date: req.body.date,
 			form_number: req.body.form_number,
-			auditor: req.body.auditor,
-			auditee: req.body.auditee,
-			score: req.body.score,
+			'Measured by Technician': req.body['Measured by Technician'],
+			'Aknowledge by IPQC': req.body['Aknowledge by IPQC'],
 			form: req.body.form,
 		})
 
@@ -30,19 +31,21 @@ const addForm = async (req, res) => {
 
 		res.status(201).json({ success: `New form created!` })
 	} catch (err) {
+		console.log(err)
 		res.status(500).json({ message: err.message })
 	}
 }
 
 const getById = async (req, res) => {
 	const { id } = req.params
-	const QA_form = await QA_Forms.findById(id).populate({
+	const Engineering_Form = await Engineering_Forms.findById(id).populate({
 		path: 'sign.user',
 		select: 'username-_id',
 	})
 
-	if (!QA_form) return res.status(204).json({ message: 'No template found' })
-	res.json(QA_form)
+	if (!Engineering_Form)
+		return res.status(204).json({ message: 'No template found' })
+	res.json(Engineering_Form)
 }
 
 const updateSign = async (req, res) => {
@@ -52,7 +55,7 @@ const updateSign = async (req, res) => {
 			accept: req.body.accept,
 			user: req.userId,
 		}
-		const result = await QA_Forms.findByIdAndUpdate(id, { sign })
+		const result = await Engineering_Forms.findByIdAndUpdate(id, { sign })
 
 		console.log(result)
 

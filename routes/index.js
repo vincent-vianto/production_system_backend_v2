@@ -11,8 +11,13 @@ const logoutController = require('../controllers/logoutController')
 const refreshTokenController = require('../controllers/refreshTokenController')
 
 const userRouter = require('./users')
+
 const QAtemplateRouter = require('./QAtemplate')
 const QAformRouter = require('./QAform')
+
+const EngineeringtemplateRouter = require('./Engineeringtemplate')
+const EngineeringformRouter = require('./Engineeringform')
+
 const { verifyToken } = require('../middleware/verifyToken')
 
 router.post('/login', authController.handleLogin)
@@ -23,5 +28,8 @@ router.use('/user', userRouter)
 
 router.use('/qa', QAtemplateRouter)
 router.use('/qaform',verifyToken, QAformRouter)
+
+router.use('/eng', EngineeringtemplateRouter)
+router.use('/engform',verifyToken, EngineeringformRouter)
 
 module.exports = router
