@@ -6,5 +6,6 @@ router.get('/', Engineering_formController.getAllForm)
 router.get('/:id', Engineering_formController.getById)
 router.post('/', Engineering_formController.addForm)
 router.put('/sign/:id', Engineering_formController.updateSign)
+router.put('/checked/:id', Engineering_formController.updateChecked)
 
 module.exports = router

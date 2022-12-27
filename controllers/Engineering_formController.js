@@ -11,6 +11,10 @@ const getAllForm = async (req, res) => {
 			path: 'sign.user',
 			select: 'username-_id',
 		})
+		.populate({
+			path: 'checked_by.user',
+			select: 'username-_id',
+		})
 	if (!Engineering_Form)
 		return res.status(204).json({ message: 'No template found' })
 	res.json(Engineering_Form)
@@ -48,9 +52,30 @@ const getById = async (req, res) => {
 	res.json(Engineering_Form)
 }
 
+const updateChecked = async (req, res) => {
+	try {
+		const { id } = req.params
+		const checked_by = {
+			accept: req.body.accept,
+			user: req.userId,
+		}
+		const result = await Engineering_Forms.findByIdAndUpdate(id, { checked_by })
+
+		console.log(result)
+
+		res.status(201).json({ success: `New form created!` })
+	} catch (err) {
+		res.status(500).json({ message: err.message })
+	}
+}
+
 const updateSign = async (req, res) => {
 	try {
 		const { id } = req.params
+		const Engineering_Form = await Engineering_Forms.findById(id)
+		if (!Engineering_Form.checked_by === false)
+			return res.status(400).json({ msg: "Haven't check yet" })
+		console.log(!Engineering_Form.checked_by)
 		const sign = {
 			accept: req.body.accept,
 			user: req.userId,
@@ -65,4 +90,4 @@ const updateSign = async (req, res) => {
 	}
 }
 
-module.exports = { getAllForm, addForm, getById, updateSign }
+module.exports = { getAllForm, addForm, getById, updateSign, updateChecked }

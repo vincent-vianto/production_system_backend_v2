@@ -15,6 +15,15 @@ const engineering_form = new Schema({
 		type: String,
 		required: true,
 	},
+	checked_by: {
+		user: {
+			type: Schema.Types.ObjectId,
+			ref: 'Users',
+		},
+		accept: {
+			type: Boolean,
+		},
+	},
 	sign: {
 		user: {
 			type: Schema.Types.ObjectId,
