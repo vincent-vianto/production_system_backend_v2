@@ -1,7 +1,7 @@
-const Engineering_Forms = require('../models/Engineering_form')
+const Store_Forms = require('../models/Store_form')
 
 const getAllForm = async (req, res) => {
-	const Engineering_Form = await Engineering_Forms.find()
+	const Store_Form = await Store_Forms.find()
 		.select(['-form'])
 		.populate({
 			path: 'user',
@@ -15,14 +15,14 @@ const getAllForm = async (req, res) => {
 			path: 'checked_by.user',
 			select: 'username-_id',
 		})
-	if (!Engineering_Form)
+	if (!Store_Form)
 		return res.status(204).json({ message: 'No template found' })
-	res.json(Engineering_Form)
+	res.json(Store_Form)
 }
 
 const addForm = async (req, res) => {
 	try {
-		const result = await Engineering_Forms.create({
+		const result = await Store_Forms.create({
 			user: req.userId,
 			date: req.body.date,
 			form_number: req.body.form_number,
@@ -40,14 +40,14 @@ const addForm = async (req, res) => {
 
 const getById = async (req, res) => {
 	const { id } = req.params
-	const Engineering_Form = await Engineering_Forms.findById(id).populate({
+	const Store_Form = await Store_Forms.findById(id).populate({
 		path: 'sign.user',
 		select: 'username-_id',
 	})
 
-	if (!Engineering_Form)
+	if (!Store_Form)
 		return res.status(204).json({ message: 'No template found' })
-	res.json(Engineering_Form)
+	res.json(Store_Form)
 }
 
 const updateChecked = async (req, res) => {
@@ -57,7 +57,7 @@ const updateChecked = async (req, res) => {
 			accept: req.body.accept,
 			user: req.userId,
 		}
-		const result = await Engineering_Forms.findByIdAndUpdate(id, { checked_by })
+		const result = await Store_Forms.findByIdAndUpdate(id, { checked_by })
 
 		console.log(result)
 
@@ -70,15 +70,15 @@ const updateChecked = async (req, res) => {
 const updateSign = async (req, res) => {
 	try {
 		const { id } = req.params
-		const Engineering_Form = await Engineering_Forms.findById(id)
-		if (!Engineering_Form.checked_by === false)
+		const Store_Form = await Store_Forms.findById(id)
+		if (!Store_Form.checked_by === false)
 			return res.status(400).json({ msg: "Haven't check yet" })
-		console.log(!Engineering_Form.checked_by)
+		console.log(!Store_Form.checked_by)
 		const sign = {
 			accept: req.body.accept,
 			user: req.userId,
 		}
-		const result = await Engineering_Forms.findByIdAndUpdate(id, { sign })
+		const result = await Store_Forms.findByIdAndUpdate(id, { sign })
 
 		console.log(result)
 
