@@ -15,17 +15,14 @@ const QA_form = new Schema({
 		type: String,
 		required: true,
 	},
-	auditor: {
-		type: String,
-		required: true,
-	},
-	auditee: {
-		type: String,
-		required: true,
-	},
-	score: {
-		type: Number,
-		required: true,
+	checked_by: {
+		user: {
+			type: Schema.Types.ObjectId,
+			ref: 'Users',
+		},
+		accept: {
+			type: Boolean,
+		},
 	},
 	sign: {
 		user: {

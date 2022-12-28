@@ -1,13 +1,18 @@
 const QA_Forms = require('../models/QA_form')
 
 const getAllForm = async (req, res) => {
-	const QA_form = await QA_Forms.find().select(['-form'])
+	const QA_form = await QA_Forms.find()
+		.select(['-form'])
 		.populate({
 			path: 'user',
 			select: 'username-_id',
 		})
 		.populate({
 			path: 'sign.user',
+			select: 'username-_id',
+		})
+		.populate({
+			path: 'checked_by.user',
 			select: 'username-_id',
 		})
 	if (!QA_form) return res.status(204).json({ message: 'No template found' })
@@ -45,9 +50,29 @@ const getById = async (req, res) => {
 	res.json(QA_form)
 }
 
+const updateChecked = async (req, res) => {
+	try {
+		const { id } = req.params
+		const checked_by = {
+			accept: req.body.accept,
+			user: req.userId,
+		}
+		const result = await QA_Forms.findByIdAndUpdate(id, { checked_by })
+
+		console.log(result)
+
+		res.status(201).json({ success: `New form created!` })
+	} catch (err) {
+		res.status(500).json({ message: err.message })
+	}
+}
+
 const updateSign = async (req, res) => {
 	try {
 		const { id } = req.params
+		const QA_form = await QA_Forms.findById(id)
+		if (!QA_form.checked_by === false)
+			return res.status(400).json({ msg: "Haven't check yet" })
 		const sign = {
 			accept: req.body.accept,
 			user: req.userId,
@@ -62,4 +87,4 @@ const updateSign = async (req, res) => {
 	}
 }
 
-module.exports = { getAllForm, addForm, getById, updateSign }
+module.exports = { getAllForm, addForm, getById, updateSign, updateChecked }
