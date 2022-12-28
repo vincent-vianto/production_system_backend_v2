@@ -8,8 +8,10 @@ const handleLogin = async (req, res) => {
 			username: req.body.username,
 		})
 		if (!user.status) return res.status(400).json({ msg: 'Not Active' })
+		
 		const match = await bcrypt.compare(req.body.password, user.password)
 		if (!match) return res.status(400).json({ msg: 'Wrong Password' })
+		
 		const userId = user._id
 		const role = user.role
 		const username = user.username
@@ -17,6 +19,7 @@ const handleLogin = async (req, res) => {
 		const accessToken = jwt.sign({ userId }, process.env.ACCESS_TOKEN_SECRET, {
 			expiresIn: '20s',
 		})
+
 		const refreshToken = jwt.sign(
 			{ userId },
 			process.env.REFRESH_TOKEN_SECRET,
@@ -24,6 +27,7 @@ const handleLogin = async (req, res) => {
 				expiresIn: '1d',
 			}
 		)
+		
 		await Users.findByIdAndUpdate(userId, { refresh_token: refreshToken })
 		// res.cookie('refreshToken', refreshToken, {
 		// 	httpOnly: true,
