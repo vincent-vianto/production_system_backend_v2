@@ -71,9 +71,10 @@ const updateSign = async (req, res) => {
 	try {
 		const { id } = req.params
 		const Engineering_Form = await Engineering_Forms.findById(id)
-		if (!Engineering_Form.checked_by === false)
+		if (!Engineering_Form.checked_by)
 			return res.status(400).json({ msg: "Haven't check yet" })
-		console.log(!Engineering_Form.checked_by)
+		if (Engineering_Form.checked_by?.accept === false)
+			return res.status(400).json({ msg: 'Please fix it before approve' })
 		const sign = {
 			accept: req.body.accept,
 			user: req.userId,
