@@ -4,10 +4,6 @@ const getAllForm = async (req, res) => {
 	const QA_form = await QA_Forms.find()
 		.select(['-form'])
 		.populate({
-			path: 'user',
-			select: 'username-_id',
-		})
-		.populate({
 			path: 'sign.user',
 			select: 'username-_id',
 		})
@@ -22,7 +18,7 @@ const getAllForm = async (req, res) => {
 const addForm = async (req, res) => {
 	try {
 		const result = await QA_Forms.create({
-			user: req.userId,
+			general: req.body.general,
 			date: req.body.date,
 			form_number: req.body.form_number,
 			auditor: req.body.auditor,
@@ -35,16 +31,22 @@ const addForm = async (req, res) => {
 
 		res.status(201).json({ success: `New form created!` })
 	} catch (err) {
+		console.log(err)
 		res.status(500).json({ message: err.message })
 	}
 }
 
 const getById = async (req, res) => {
 	const { id } = req.params
-	const QA_form = await QA_Forms.findById(id).populate({
-		path: 'sign.user',
-		select: 'username-_id',
-	})
+	const QA_form = await QA_Forms.findById(id)
+		.populate({
+			path: 'sign.user',
+			select: 'username-_id',
+		})
+		.populate({
+			path: 'checked_by.user',
+			select: 'username-_id',
+		})
 
 	if (!QA_form) return res.status(204).json({ message: 'No template found' })
 	res.json(QA_form)
@@ -71,8 +73,14 @@ const updateSign = async (req, res) => {
 	try {
 		const { id } = req.params
 		const QA_form = await QA_Forms.findById(id)
-		if (!QA_form.checked_by === false)
+		if (!QA_form.checked_by)
 			return res.status(400).json({ msg: "Haven't check yet" })
+		if (QA_form.checked_by.accept === false)
+			return res
+				.status(400)
+				.json({
+					msg: 'this form has been rejected before. please get checked first',
+				})
 		const sign = {
 			accept: req.body.accept,
 			user: req.userId,

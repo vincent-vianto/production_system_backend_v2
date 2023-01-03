@@ -4,10 +4,6 @@ const getAllForm = async (req, res) => {
 	const Store_Form = await Store_Forms.find()
 		.select(['-form'])
 		.populate({
-			path: 'user',
-			select: 'username-_id',
-		})
-		.populate({
 			path: 'sign.user',
 			select: 'username-_id',
 		})
@@ -15,15 +11,14 @@ const getAllForm = async (req, res) => {
 			path: 'checked_by.user',
 			select: 'username-_id',
 		})
-	if (!Store_Form)
-		return res.status(204).json({ message: 'No template found' })
+	if (!Store_Form) return res.status(204).json({ message: 'No template found' })
 	res.json(Store_Form)
 }
 
 const addForm = async (req, res) => {
 	try {
 		const result = await Store_Forms.create({
-			user: req.userId,
+			general: req.body.general,
 			date: req.body.date,
 			form_number: req.body.form_number,
 			form: req.body.form,
@@ -40,13 +35,17 @@ const addForm = async (req, res) => {
 
 const getById = async (req, res) => {
 	const { id } = req.params
-	const Store_Form = await Store_Forms.findById(id).populate({
-		path: 'sign.user',
-		select: 'username-_id',
-	})
+	const Store_Form = await Store_Forms.findById(id)
+		.populate({
+			path: 'sign.user',
+			select: 'username-_id',
+		})
+		.populate({
+			path: 'checked_by.user',
+			select: 'username-_id',
+		})
 
-	if (!Store_Form)
-		return res.status(204).json({ message: 'No template found' })
+	if (!Store_Form) return res.status(204).json({ message: 'No template found' })
 	res.json(Store_Form)
 }
 
@@ -71,9 +70,12 @@ const updateSign = async (req, res) => {
 	try {
 		const { id } = req.params
 		const Store_Form = await Store_Forms.findById(id)
-		if (!Store_Form.checked_by === false)
+		if (!Store_Form.checked_by)
 			return res.status(400).json({ msg: "Haven't check yet" })
-		console.log(!Store_Form.checked_by)
+		if (Store_Form.checked_by.accept === false)
+			return res.status(400).json({
+				msg: 'this form has been rejected before. please get checked first',
+			})
 		const sign = {
 			accept: req.body.accept,
 			user: req.userId,

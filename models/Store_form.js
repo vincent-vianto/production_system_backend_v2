@@ -2,10 +2,9 @@ const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
 const store_form = new Schema({
-	user: {
-		type: Schema.Types.ObjectId,
-		required: true,
-		ref: 'Users',
+	general: {
+		type: mongoose.Schema.Types.Mixed,
+		required: true
 	},
 	date: {
 		type: Date,

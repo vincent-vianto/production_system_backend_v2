@@ -2,10 +2,9 @@ const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
 const QA_form = new Schema({
-	user: {
-		type: Schema.Types.ObjectId,
-		required: true,
-		ref: 'Users',
+	general: {
+		type: mongoose.Schema.Types.Mixed,
+		required: true
 	},
 	date: {
 		type: Date,
@@ -38,6 +37,7 @@ const QA_form = new Schema({
 			category: String,
 			items: {
 				type: Schema.Types.Mixed,
+				required: true,
 			},
 		},
 	],

@@ -13,6 +13,7 @@ const addForm = async (req, res) => {
 			name: req.body.name,
 			description: req.body.description,
 			form_number: req.body.form_number,
+			general: req.body.general,
 			template: req.body.template,
 		})
 

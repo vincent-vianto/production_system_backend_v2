@@ -4,10 +4,6 @@ const getAllForm = async (req, res) => {
 	const Engineering_Form = await Engineering_Forms.find()
 		.select(['-form'])
 		.populate({
-			path: 'user',
-			select: 'username-_id',
-		})
-		.populate({
 			path: 'sign.user',
 			select: 'username-_id',
 		})
@@ -23,7 +19,7 @@ const getAllForm = async (req, res) => {
 const addForm = async (req, res) => {
 	try {
 		const result = await Engineering_Forms.create({
-			user: req.userId,
+			general: req.body.general,
 			date: req.body.date,
 			form_number: req.body.form_number,
 			form: req.body.form,
@@ -40,10 +36,15 @@ const addForm = async (req, res) => {
 
 const getById = async (req, res) => {
 	const { id } = req.params
-	const Engineering_Form = await Engineering_Forms.findById(id).populate({
-		path: 'sign.user',
-		select: 'username-_id',
-	})
+	const Engineering_Form = await Engineering_Forms.findById(id)
+		.populate({
+			path: 'sign.user',
+			select: 'username-_id',
+		})
+		.populate({
+			path: 'checked_by.user',
+			select: 'username-_id',
+		})
 
 	if (!Engineering_Form)
 		return res.status(204).json({ message: 'No template found' })
@@ -73,8 +74,10 @@ const updateSign = async (req, res) => {
 		const Engineering_Form = await Engineering_Forms.findById(id)
 		if (!Engineering_Form.checked_by)
 			return res.status(400).json({ msg: "Haven't check yet" })
-		if (Engineering_Form.checked_by?.accept === false)
-			return res.status(400).json({ msg: 'Please fix it before approve' })
+		if (Engineering_Form.checked_by.accept === false)
+			return res.status(400).json({
+				msg: 'this form has been rejected before. please get checked first',
+			})
 		const sign = {
 			accept: req.body.accept,
 			user: req.userId,
