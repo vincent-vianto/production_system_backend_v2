@@ -70,7 +70,7 @@ const updateSign = async (req, res) => {
 	try {
 		const { id } = req.params
 		const Store_Form = await Store_Forms.findById(id)
-		if (!Store_Form.checked_by)
+		if (!Store_Form.checked_by.accept)
 			return res.status(400).json({ msg: "Haven't check yet" })
 		if (Store_Form.checked_by.accept === false)
 			return res.status(400).json({

@@ -2,7 +2,7 @@ const QA_Forms = require('../models/QA_form')
 
 const getAllForm = async (req, res) => {
 	const QA_form = await QA_Forms.find()
-		.select(['-form'])
+		.select(['-form', '-general.Auditee', '-general.Score'])
 		.populate({
 			path: 'sign.user',
 			select: 'username-_id',
@@ -73,21 +73,18 @@ const updateSign = async (req, res) => {
 	try {
 		const { id } = req.params
 		const QA_form = await QA_Forms.findById(id)
-		if (!QA_form.checked_by)
+		console.log('test')
+		if (!QA_form.checked_by.accept)
 			return res.status(400).json({ msg: "Haven't check yet" })
 		if (QA_form.checked_by.accept === false)
-			return res
-				.status(400)
-				.json({
-					msg: 'this form has been rejected before. please get checked first',
-				})
+			return res.status(400).json({
+				msg: 'this form has been rejected before. please get checked first',
+			})
 		const sign = {
 			accept: req.body.accept,
 			user: req.userId,
 		}
 		const result = await QA_Forms.findByIdAndUpdate(id, { sign })
-
-		console.log(result)
 
 		res.status(201).json({ success: `New form created!` })
 	} catch (err) {
