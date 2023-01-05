@@ -20,10 +20,8 @@ const addForm = async (req, res) => {
 		const result = await QA_Forms.create({
 			general: req.body.general,
 			date: req.body.date,
+			form_name: req.body.form_name,
 			form_number: req.body.form_number,
-			auditor: req.body.auditor,
-			auditee: req.body.auditee,
-			score: req.body.score,
 			form: req.body.form,
 		})
 

@@ -6,6 +6,10 @@ const engineering_form = new Schema({
 		type: mongoose.Schema.Types.Mixed,
 		required: true
 	},
+	form_name: {
+		type: String,
+		required: true,
+	},
 	date: {
 		type: Date,
 		required: true,

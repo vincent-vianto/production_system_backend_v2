@@ -20,6 +20,7 @@ const addForm = async (req, res) => {
 	try {
 		const result = await Engineering_Forms.create({
 			general: req.body.general,
+			form_name: req.body.form_name,
 			date: req.body.date,
 			form_number: req.body.form_number,
 			form: req.body.form,
