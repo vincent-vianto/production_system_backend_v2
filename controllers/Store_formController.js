@@ -91,4 +91,22 @@ const updateSign = async (req, res) => {
 	}
 }
 
-module.exports = { getAllForm, addForm, getById, updateSign, updateChecked }
+const modifyForm = async (req, res) => {
+	try {
+		const { id } = req.params
+		const result = await Store_Forms.findByIdAndUpdate(id, {
+			form: req.body.form,
+			$unset: { checked_by: '', sign: '' },
+			$inc: { __v: 1 }
+		},)
+
+		console.log(result)
+
+		res.status(201).json({ success: `New form created!` })
+	} catch (err) {
+		console.log(err)
+		res.status(500).json({ message: err.message })
+	}
+}
+
+module.exports = { getAllForm, addForm, getById, updateSign, updateChecked, modifyForm }
