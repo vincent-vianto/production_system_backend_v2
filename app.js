@@ -6,6 +6,8 @@ var cookieParser = require('cookie-parser')
 var logger = require('morgan')
 const cors = require('cors')
 const Mongoose = require('mongoose')
+const compression = require('compression')
+
 const env = process.env.NODE_ENV || 'development'
 const config = require('./config/config.js')[env]
 
@@ -26,6 +28,7 @@ var indexRouter = require('./routes/index')
 
 var app = express()
 
+app.use(compression())
 app.use(cors(corsOptions))
 app.use(logger('dev'))
 app.use(express.json())

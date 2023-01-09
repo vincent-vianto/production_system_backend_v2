@@ -25,11 +25,8 @@ const addForm = async (req, res) => {
 			form: req.body.form,
 		})
 
-		console.log(result)
-
 		res.status(201).json({ success: `New form created!` })
 	} catch (err) {
-		console.log(err)
 		res.status(500).json({ message: err.message })
 	}
 }
@@ -59,8 +56,6 @@ const updateChecked = async (req, res) => {
 		}
 		const result = await QA_Forms.findByIdAndUpdate(id, { checked_by })
 
-		console.log(result)
-
 		res.status(201).json({ success: `New form created!` })
 	} catch (err) {
 		res.status(500).json({ message: err.message })
@@ -71,7 +66,6 @@ const updateSign = async (req, res) => {
 	try {
 		const { id } = req.params
 		const QA_form = await QA_Forms.findById(id)
-		console.log('test')
 		if (!QA_form.checked_by.accept)
 			return res.status(400).json({ msg: "Haven't check yet" })
 		if (QA_form.checked_by.accept === false)
@@ -100,11 +94,8 @@ const modifyForm = async (req, res) => {
 			$inc: { __v: 1 }
 		},)
 
-		console.log(result)
-
 		res.status(201).json({ success: `New form created!` })
 	} catch (err) {
-		console.log(err)
 		res.status(500).json({ message: err.message })
 	}
 }

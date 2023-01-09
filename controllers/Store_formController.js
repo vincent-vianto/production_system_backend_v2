@@ -25,11 +25,8 @@ const addForm = async (req, res) => {
 			form: req.body.form,
 		})
 
-		console.log(result)
-
 		res.status(201).json({ success: `New form created!` })
 	} catch (err) {
-		console.log(err)
 		res.status(500).json({ message: err.message })
 	}
 }
@@ -59,8 +56,6 @@ const updateChecked = async (req, res) => {
 		}
 		const result = await Store_Forms.findByIdAndUpdate(id, { checked_by })
 
-		console.log(result)
-
 		res.status(201).json({ success: `New form created!` })
 	} catch (err) {
 		res.status(500).json({ message: err.message })
@@ -83,8 +78,6 @@ const updateSign = async (req, res) => {
 		}
 		const result = await Store_Forms.findByIdAndUpdate(id, { sign })
 
-		console.log(result)
-
 		res.status(201).json({ success: `New form created!` })
 	} catch (err) {
 		res.status(500).json({ message: err.message })
@@ -100,11 +93,8 @@ const modifyForm = async (req, res) => {
 			$inc: { __v: 1 }
 		},)
 
-		console.log(result)
-
 		res.status(201).json({ success: `New form created!` })
 	} catch (err) {
-		console.log(err)
 		res.status(500).json({ message: err.message })
 	}
 }

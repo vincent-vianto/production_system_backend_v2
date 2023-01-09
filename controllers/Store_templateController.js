@@ -17,8 +17,6 @@ const addForm = async (req, res) => {
 			template: req.body.template,
 		})
 
-		console.log(result)
-
 		res
 			.status(201)
 			.json({ success: `New template ${req.body.form_number} created!` })

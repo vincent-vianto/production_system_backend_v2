@@ -13,23 +13,18 @@ const addUser = async (req, res) => {
 			.status(400)
 			.json({ message: 'Username and password are required.' })
 
-	// check for duplicate usernames in the db
 	const duplicate = await User.findOne({ username: username }).exec()
-	if (duplicate) return res.sendStatus(409) //Conflict
+	if (duplicate) return res.sendStatus(409)
 
 	try {
-		//encrypt the password
 		const hashedPassword = await bcrypt.hash(password, 10)
 
-		//create and store the new user
 		const result = await User.create({
 			username: username,
 			password: hashedPassword,
 			status: status,
 			role: role,
 		})
-
-		console.log(result)
 
 		res.status(201).json({ success: `New user ${username} created!` })
 	} catch (err) {
@@ -38,8 +33,6 @@ const addUser = async (req, res) => {
 }
 
 const deleteUser = async (req, res) => {
-	if (!req?.body?.id)
-		return res.status(400).json({ message: 'User ID required' })
 	const user = await User.findOne({ _id: req.body.id }).exec()
 	if (!user) {
 		return res.status(204).json({ message: `User ID ${req.body.id} not found` })
@@ -49,8 +42,6 @@ const deleteUser = async (req, res) => {
 }
 
 const getUser = async (req, res) => {
-	if (!req?.params?.id)
-		return res.status(400).json({ message: 'User ID required' })
 	const user = await User.findOne({ _id: req.params.id }).exec()
 	if (!user) {
 		return res
