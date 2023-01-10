@@ -29,7 +29,7 @@ const store_template = new Schema({
 						enum: ['text', 'number', 'radio'],
 					},
 					opt: {
-						type: mongoose.Schema.Types.Mixed,
+						type: Array,
 						required: function () {
 							return this.field.type === 'radio'
 						},
@@ -57,14 +57,19 @@ const store_template = new Schema({
 									enum: ['text', 'number', 'radio'],
 								},
 								opt: {
-									type: mongoose.Schema.Types.Mixed,
+									type: [],
 									required: function () {
 										return this.field.type === 'radio'
 									},
 								},
 							},
-							comment: Boolean,
-							validate: mongoose.Schema.Types.Mixed,
+							comment: {
+								type: Boolean,
+								default: false,
+							},
+							validate: {
+								type: mongoose.Schema.Types.Mixed,
+							},
 						},
 					],
 					validate: (v) => Array.isArray(v) && v.length > 0,

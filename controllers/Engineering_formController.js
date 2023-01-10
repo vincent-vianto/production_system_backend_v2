@@ -2,7 +2,11 @@ const Engineering_Forms = require('../models/Engineering_form')
 
 const getAllForm = async (req, res) => {
 	const Engineering_Form = await Engineering_Forms.find()
-		.select(['-form'])
+		.select(['-form', '-general'])
+		.populate({
+			path: 'user',
+			select: 'username-_id',
+		})
 		.populate({
 			path: 'sign.user',
 			select: 'username-_id',
@@ -19,6 +23,7 @@ const getAllForm = async (req, res) => {
 const addForm = async (req, res) => {
 	try {
 		const result = await Engineering_Forms.create({
+			user: req.userId,
 			general: req.body.general,
 			form_name: req.body.form_name,
 			date: req.body.date,

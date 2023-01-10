@@ -11,6 +11,8 @@ const compression = require('compression')
 const env = process.env.NODE_ENV || 'development'
 const config = require('./config/config.js')[env]
 
+Mongoose.set("strictQuery", false);
+
 if (config.database.url) {
 	Mongoose.connect(config.database.url, config.database.options)
 } else {

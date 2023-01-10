@@ -29,7 +29,7 @@ const QA_template = new Schema({
 						enum: ['text', 'number', 'radio'],
 					},
 					opt: {
-						type: mongoose.Schema.Types.Mixed,
+						type: Array,
 						required: function () {
 							return this.field.type === 'radio'
 						},
@@ -63,7 +63,10 @@ const QA_template = new Schema({
 									},
 								},
 							},
-							comment: Boolean
+							comment: {
+								type: Boolean,
+								default: false,
+							},
 						},
 					],
 					validate: (v) => Array.isArray(v) && v.length > 0,

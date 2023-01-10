@@ -2,9 +2,26 @@ const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
 const engineering_form = new Schema({
+	user: {
+		type: Schema.Types.ObjectId,
+		ref: 'Users',
+		required: true,
+	},
 	general: {
-		type: mongoose.Schema.Types.Mixed,
-		required: true
+		type: [
+			{
+				item: {
+					type: String,
+					required: true,
+				},
+				value: {
+					type: Schema.Types.Mixed,
+					required: true,
+					validate: (v) => typeof v === 'string' || typeof v === 'number',
+				},
+			},
+		],
+		validate: (v) => Array.isArray(v) && v.length > 0,
 	},
 	form_name: {
 		type: String,
@@ -36,13 +53,31 @@ const engineering_form = new Schema({
 			type: Boolean,
 		},
 	},
-	form: [
-		{
-			category: String,
-			items: {
-				type: Schema.Types.Mixed,
+	form: {
+		type: [
+			{
+				category: String,
+				items: {
+					type: [
+						{
+							item: {
+								type: String,
+								required: true,
+							},
+							value: {
+								type: Schema.Types.Mixed,
+								required: true,
+								validate: (v) => typeof v === 'string' || typeof v === 'number',
+							},
+							comment: String,
+							passed: Boolean,
+						},
+					],
+					validate: (v) => Array.isArray(v) && v.length > 0,
+				},
 			},
-		},
-	],
+		],
+		validate: (v) => Array.isArray(v) && v.length > 0,
+	},
 })
 module.exports = mongoose.model('engineering_form', engineering_form)

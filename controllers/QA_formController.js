@@ -2,7 +2,11 @@ const QA_Forms = require('../models/QA_form')
 
 const getAllForm = async (req, res) => {
 	const QA_form = await QA_Forms.find()
-		.select(['-form', '-general.Auditee', '-general.Score'])
+		.select(['-form', '-general'])
+		.populate({
+			path: 'user',
+			select: 'username-_id',
+		})
 		.populate({
 			path: 'sign.user',
 			select: 'username-_id',
@@ -18,6 +22,7 @@ const getAllForm = async (req, res) => {
 const addForm = async (req, res) => {
 	try {
 		const result = await QA_Forms.create({
+			user: req.userId,
 			general: req.body.general,
 			date: req.body.date,
 			form_name: req.body.form_name,

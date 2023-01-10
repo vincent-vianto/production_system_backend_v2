@@ -2,7 +2,11 @@ const Store_Forms = require('../models/Store_form')
 
 const getAllForm = async (req, res) => {
 	const Store_Form = await Store_Forms.find()
-		.select(['-form'])
+		.select(['-form', '-general'])
+		.populate({
+			path: 'user',
+			select: 'username-_id',
+		})
 		.populate({
 			path: 'sign.user',
 			select: 'username-_id',
@@ -18,6 +22,7 @@ const getAllForm = async (req, res) => {
 const addForm = async (req, res) => {
 	try {
 		const result = await Store_Forms.create({
+			user: req.userId,
 			general: req.body.general,
 			form_name: req.body.form_name,
 			date: req.body.date,
@@ -90,8 +95,8 @@ const modifyForm = async (req, res) => {
 		const result = await Store_Forms.findByIdAndUpdate(id, {
 			form: req.body.form,
 			$unset: { checked_by: '', sign: '' },
-			$inc: { __v: 1 }
-		},)
+			$inc: { __v: 1 },
+		})
 
 		res.status(201).json({ success: `New form created!` })
 	} catch (err) {
@@ -99,4 +104,11 @@ const modifyForm = async (req, res) => {
 	}
 }
 
-module.exports = { getAllForm, addForm, getById, updateSign, updateChecked, modifyForm }
+module.exports = {
+	getAllForm,
+	addForm,
+	getById,
+	updateSign,
+	updateChecked,
+	modifyForm,
+}
