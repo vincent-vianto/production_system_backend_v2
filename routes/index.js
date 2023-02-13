@@ -21,6 +21,10 @@ const EngineeringformRouter = require('./Engineeringform')
 const StoretemplateRouter = require('./Storetemplate')
 const StoreformRouter = require('./Storeform')
 
+const sectionRouter = require('./section')
+
+const sectionTemplateRouter = require('./sectionTemplate')
+
 const { verifyToken } = require('../middleware/verifyToken')
 
 router.post('/login', authController.handleLogin)
@@ -33,9 +37,13 @@ router.use('/qa', QAtemplateRouter)
 router.use('/qaform', verifyToken, QAformRouter)
 
 router.use('/eng', EngineeringtemplateRouter)
-router.use('/engform', verifyToken, EngineeringformRouter)
+router.use('/engform', verifyToken,  EngineeringformRouter)
 
 router.use('/store', StoretemplateRouter)
 router.use('/storeform', verifyToken, StoreformRouter)
+
+router.use('/section', sectionRouter)
+
+router.use('/template', sectionTemplateRouter)
 
 module.exports = router

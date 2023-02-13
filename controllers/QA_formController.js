@@ -21,7 +21,7 @@ const getAllForm = async (req, res) => {
 
 const addForm = async (req, res) => {
 	try {
-		const result = await QA_Forms.create({
+		const created = await QA_Forms.create({
 			user: req.userId,
 			general: req.body.general,
 			date: req.body.date,
@@ -30,7 +30,21 @@ const addForm = async (req, res) => {
 			form: req.body.form,
 		})
 
-		res.status(201).json({ success: `New form created!` })
+		const result = await QA_Forms.findById(created._id)
+			.populate({
+				path: 'user',
+				select: 'username-_id',
+			})
+			.populate({
+				path: 'sign.user',
+				select: 'username-_id',
+			})
+			.populate({
+				path: 'checked_by.user',
+				select: 'username-_id',
+			})
+
+		res.status(201).json(result)
 	} catch (err) {
 		res.status(500).json({ message: err.message })
 	}
@@ -59,9 +73,25 @@ const updateChecked = async (req, res) => {
 			accept: req.body.accept,
 			user: req.userId,
 		}
-		const result = await QA_Forms.findByIdAndUpdate(id, { checked_by })
+		const result = await QA_Forms.findByIdAndUpdate(
+			id,
+			{ checked_by },
+			{ new: true }
+		)
+			.populate({
+				path: 'user',
+				select: 'username-_id',
+			})
+			.populate({
+				path: 'sign.user',
+				select: 'username-_id',
+			})
+			.populate({
+				path: 'checked_by.user',
+				select: 'username-_id',
+			})
 
-		res.status(201).json({ success: `New form created!` })
+		res.status(201).json(result)
 	} catch (err) {
 		res.status(500).json({ message: err.message })
 	}
@@ -81,9 +111,20 @@ const updateSign = async (req, res) => {
 			accept: req.body.accept,
 			user: req.userId,
 		}
-		const result = await QA_Forms.findByIdAndUpdate(id, { sign })
-
-		res.status(201).json({ success: `New form created!` })
+		const result = await QA_Forms.findByIdAndUpdate(id, { sign }, { new: true })
+			.populate({
+				path: 'user',
+				select: 'username-_id',
+			})
+			.populate({
+				path: 'sign.user',
+				select: 'username-_id',
+			})
+			.populate({
+				path: 'checked_by.user',
+				select: 'username-_id',
+			})
+		res.status(201).json(result)
 	} catch (err) {
 		res.status(500).json({ message: err.message })
 	}
@@ -92,17 +133,40 @@ const updateSign = async (req, res) => {
 const modifyForm = async (req, res) => {
 	try {
 		const { id } = req.params
-		const result = await QA_Forms.findByIdAndUpdate(id, {
-			general: req.body.general,
-			form: req.body.form,
-			$unset: { checked_by: '', sign: '' },
-			$inc: { __v: 1 }
-		},)
+		const result = await QA_Forms.findByIdAndUpdate(
+			id,
+			{
+				general: req.body.general,
+				form: req.body.form,
+				$unset: { checked_by: '', sign: '' },
+				$inc: { __v: 1 },
+			},
+			{ new: true }
+		)
+			.populate({
+				path: 'user',
+				select: 'username-_id',
+			})
+			.populate({
+				path: 'sign.user',
+				select: 'username-_id',
+			})
+			.populate({
+				path: 'checked_by.user',
+				select: 'username-_id',
+			})
 
-		res.status(201).json({ success: `New form created!` })
+		res.status(201).json(result)
 	} catch (err) {
 		res.status(500).json({ message: err.message })
 	}
 }
 
-module.exports = { getAllForm, addForm, getById, updateSign, updateChecked, modifyForm }
+module.exports = {
+	getAllForm,
+	addForm,
+	getById,
+	updateSign,
+	updateChecked,
+	modifyForm,
+}
