@@ -6,6 +6,7 @@ const sectionController = require('../controllers/sectionController')
 router.get('/', sectionController.getAllSections)
 router.post('/', sectionController.addSection)
 
+router.get('/:id', sectionController.getSectionTemplatesById)
 router.put('/:id', sectionController.editSection)
 router.delete('/:id', sectionController.deleteSection)
 

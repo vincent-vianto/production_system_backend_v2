@@ -14,6 +14,12 @@ const section = new Schema(
 				ref: 'section_template',
 			},
 		],
+		forms: [
+			{
+				type: Schema.Types.ObjectId,
+				ref: 'section_template',
+			},
+		],
 	},
 	{ versionKey: false }
 )

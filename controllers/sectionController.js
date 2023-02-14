@@ -50,7 +50,7 @@ const deleteSection = async (req, res) => {
 	}
 }
 
-const getSectionTemplates = async (req, res) => {
+const getSectionTemplatesById = async (req, res) => {
 	try {
 		const { id } = req.params
 		const section = await Sections.findById(id).populate({
@@ -67,5 +67,5 @@ module.exports = {
 	addSection,
 	editSection,
 	deleteSection,
-	getSectionTemplates,
+	getSectionTemplatesById,
 }
